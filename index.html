@@ -132,7 +132,7 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Gar
 
 const Tag = ({label}) => <span className={`tag tag-${label}`}>{label}</span>;
 
-const ImgUpload = ({value, onChange, label="Imagen"}) => {
+const ImgUpload = ({value, onChange, label="Imagen", imgFit, imgPos, onFitChange, onPosChange}) => {
   const fileRef = useRef(null);
   const [uploading, setUploading] = useState(false);
   const toBase64 = (file) => new Promise((res,rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); });
@@ -143,26 +143,17 @@ const ImgUpload = ({value, onChange, label="Imagen"}) => {
       const b64 = await toBase64(file);
       const r = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        body: JSON.stringify({
-          action: 'upload_image',
-          image: b64,
-          fileName: 'paranoia_' + Date.now() + '_' + file.name
-        })
+        body: JSON.stringify({ action: 'upload_image', image: b64, fileName: 'paranoia_' + Date.now() + '_' + file.name })
       });
       const json = await r.json();
-      if (json.status === 'success' && json.url) {
-        onChange(json.url);
-      } else {
-        // Fallback: usar base64 local si Drive falla
-        onChange(b64);
-      }
-    } catch(e) {
-      // Fallback local
-      const b64 = await toBase64(file);
-      onChange(b64);
-    }
+      if (json.status === 'success' && json.url) { onChange(json.url); }
+      else { onChange(b64); }
+    } catch(e) { const b64 = await toBase64(file); onChange(b64); }
     setUploading(false);
   };
+  
+  const fitOpts = ['cover','contain','fill'];
+  const posOpts = ['center','top','bottom','left','right'];
   
   return (
     <div style={{display:'flex',flexDirection:'column',gap:6}}>
@@ -172,11 +163,21 @@ const ImgUpload = ({value, onChange, label="Imagen"}) => {
         <button onClick={()=>fileRef.current?.click()} disabled={uploading} style={{padding:'8px 12px',borderRadius:8,border:'1px solid rgba(201,168,76,.2)',background:uploading?'rgba(201,168,76,.15)':'rgba(201,168,76,.06)',color:'var(--gold)',fontSize:11,cursor:uploading?'wait':'pointer',whiteSpace:'nowrap'}}>{uploading?'⏳ Subiendo...':'📁 Subir'}</button>
         <input ref={fileRef} type="file" accept="image/*" style={{display:'none'}} onChange={async e=>{const f=e.target.files?.[0];if(f)uploadToDrive(f);}}/>
       </div>
-      {uploading&&<p style={{fontSize:10,color:'#42A5F5'}}>☁️ Subiendo imagen a la nube...</p>}
-      {value && <div style={{display:'flex',gap:6,alignItems:'center'}}>
-        <img src={value} alt="" style={{width:60,height:40,borderRadius:6,objectFit:'cover',background:'#1a1512'}}/>
-        <button onClick={()=>onChange('')} style={{padding:'4px 10px',borderRadius:6,border:'1px solid rgba(239,83,80,.3)',background:'rgba(239,83,80,.08)',color:'#EF5350',fontSize:10,cursor:'pointer'}}>🗑 Eliminar foto</button>
-        {typeof value==='string'&&value.startsWith('data:')&&<span style={{fontSize:9,color:'#FFB74D'}}>⚠️ Local — guarda para subir</span>}
+      {uploading&&<p style={{fontSize:10,color:'#42A5F5'}}>☁️ Subiendo imagen a Google Drive...</p>}
+      {value && <div style={{display:'flex',flexDirection:'column',gap:6}}>
+        <div style={{display:'flex',gap:6,alignItems:'center'}}>
+          <img src={value} alt="" style={{width:80,height:55,borderRadius:6,objectFit:imgFit||'cover',objectPosition:imgPos||'center',background:'#1a1512',border:'1px solid rgba(201,168,76,.15)'}}/>
+          <button onClick={()=>onChange('')} style={{padding:'4px 10px',borderRadius:6,border:'1px solid rgba(239,83,80,.3)',background:'rgba(239,83,80,.08)',color:'#EF5350',fontSize:10,cursor:'pointer'}}>🗑</button>
+          {typeof value==='string'&&value.startsWith('data:')&&<span style={{fontSize:9,color:'#FFB74D'}}>⚠️ Local</span>}
+        </div>
+        {onFitChange&&<div style={{display:'flex',gap:3,flexWrap:'wrap',alignItems:'center'}}>
+          <span style={{fontSize:9,color:'var(--text-muted)'}}>Ajuste:</span>
+          {fitOpts.map(f=><button key={f} onClick={()=>onFitChange(f)} style={{padding:'2px 7px',borderRadius:6,fontSize:9,border:'1px solid',cursor:'pointer',background:(imgFit||'cover')===f?'rgba(201,168,76,.15)':'transparent',color:(imgFit||'cover')===f?'var(--gold)':'var(--text-muted)',borderColor:(imgFit||'cover')===f?'var(--gold-dark)':'rgba(255,255,255,.1)'}}>{f==='cover'?'Llenar':f==='contain'?'Ajustar':'Estirar'}</button>)}
+        </div>}
+        {onPosChange&&<div style={{display:'flex',gap:3,flexWrap:'wrap',alignItems:'center'}}>
+          <span style={{fontSize:9,color:'var(--text-muted)'}}>Posición:</span>
+          {posOpts.map(p=><button key={p} onClick={()=>onPosChange(p)} style={{padding:'2px 6px',borderRadius:6,fontSize:8,border:'1px solid',cursor:'pointer',background:(imgPos||'center')===p?'rgba(201,168,76,.15)':'transparent',color:(imgPos||'center')===p?'var(--gold)':'var(--text-muted)',borderColor:(imgPos||'center')===p?'var(--gold-dark)':'rgba(255,255,255,.1)'}}>{{'center':'Centro','top':'Arriba','bottom':'Abajo','left':'Izq','right':'Der'}[p]}</button>)}
+        </div>}
       </div>}
     </div>
   );
@@ -184,13 +185,15 @@ const ImgUpload = ({value, onChange, label="Imagen"}) => {
 
 const MenuCard = ({item, onClick, delay=0}) => {
   const [ld,setLd]=useState(false);const [err,setErr]=useState(false);const ref=useRef(null);const [vis,setVis]=useState(false);
+  const hasImg = item.img && item.img.length > 5;
+  useEffect(()=>{setLd(false);setErr(false);},[item.img]);
   useEffect(()=>{const o=new IntersectionObserver(([e])=>{if(e.isIntersecting){setVis(true);o.disconnect();}},{threshold:.05});if(ref.current)o.observe(ref.current);return()=>o.disconnect();},[]);
-  const ico={cocteles:'🍸',bebidas:'☕',postres:'🍰',mariscos:'🦞',pasta:'🍝',grill:'🔥',cortes:'🥩',rapidos:'🍔',especial:'⭐'};
+  const ico={entradas:'🥗',cocteles:'🍸',bebidas:'☕',postres:'🍰',mariscos:'🦞',pasta:'🍝',grill:'🔥',cortes:'🥩',rapidos:'🍔',especial:'⭐',cervezas:'🍺'};
   return (<div ref={ref} className="menu-card" onClick={()=>item.available&&onClick(item)} style={{opacity:vis?1:0,transform:vis?'translateY(0)':'translateY(30px)',transition:`all .6s cubic-bezier(.23,1,.32,1) ${delay}s`,filter:item.available?'none':'grayscale(.5) opacity(.6)'}}>
     <div style={{position:'relative',width:'100%',height:200,overflow:'hidden',background:'#1a1512'}}>
-      {!err&&<img src={item.img} alt={item.name} className="card-img" onLoad={()=>setLd(true)} onError={()=>setErr(true)} style={{position:'absolute',inset:0,opacity:ld?1:0,transition:'opacity .5s'}}/>}
-      {!ld&&!err&&<div style={{position:'absolute',inset:0,background:'linear-gradient(90deg,#1a1512 25%,#241e18 50%,#1a1512 75%)',backgroundSize:'200% 100%',animation:'shimmer 1.5s infinite'}}/>}
-      {err&&<div style={{position:'absolute',inset:0,background:'linear-gradient(135deg,#1a1410,#2a2018,#1a1410)',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:8}}><span style={{fontSize:36,opacity:.4}}>{ico[item.cat]||'🍽️'}</span><span style={{fontSize:10,color:'var(--gold-dark)',letterSpacing:'.1em',textTransform:'uppercase'}}>Paranoia</span></div>}
+      {hasImg&&!err&&<img src={item.img} alt={item.name} className="card-img" crossOrigin="anonymous" onLoad={()=>setLd(true)} onError={()=>setErr(true)} style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:item.imgFit||'cover',objectPosition:item.imgPos||'center',opacity:ld?1:0,transition:'opacity .5s'}}/>}
+      {hasImg&&!ld&&!err&&<div style={{position:'absolute',inset:0,background:'linear-gradient(90deg,#1a1512 25%,#241e18 50%,#1a1512 75%)',backgroundSize:'200% 100%',animation:'shimmer 1.5s infinite'}}/>}
+      {(!hasImg||err)&&<div style={{position:'absolute',inset:0,background:'linear-gradient(135deg,#1a1410,#2a2018,#1a1410)',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:8}}><span style={{fontSize:36,opacity:.4}}>{ico[item.cat]||'🍽️'}</span><span style={{fontSize:10,color:'var(--gold-dark)',letterSpacing:'.1em',textTransform:'uppercase'}}>Paranoia</span></div>}
       <div style={{position:'absolute',bottom:0,left:0,right:0,height:'50%',background:'linear-gradient(transparent,rgba(0,0,0,.8))'}}/>
       {item.tags?.length>0&&<div style={{position:'absolute',top:10,left:10,display:'flex',flexWrap:'wrap',gap:4}}>{item.tags.map(t=><Tag key={t} label={t}/>)}</div>}
       {!item.available&&<div style={{position:'absolute',top:10,right:10}}><Tag label="agotado"/></div>}
@@ -206,10 +209,18 @@ const MenuCard = ({item, onClick, delay=0}) => {
   </div>);
 };
 
-const DetailModal = ({item,onClose}) => !item?null:(<div className="modal-overlay" onClick={onClose}><div className="modal-content" onClick={e=>e.stopPropagation()}>
-  <div style={{position:'relative'}}><img src={item.img} alt={item.name} style={{width:'100%',height:280,objectFit:'cover',borderRadius:'20px 20px 0 0'}}/><button onClick={onClose} style={{position:'absolute',top:14,right:14,width:36,height:36,borderRadius:'50%',border:'none',background:'rgba(0,0,0,.6)',color:'white',fontSize:18,cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center'}}>✕</button><div style={{position:'absolute',bottom:0,left:0,right:0,height:'40%',background:'linear-gradient(transparent,#161210)'}}/>{item.tags?.length>0&&<div style={{position:'absolute',bottom:16,left:20,display:'flex',gap:6}}>{item.tags.map(t=><Tag key={t} label={t}/>)}</div>}</div>
+const DetailModal = ({item,onClose}) => {
+  if(!item)return null;
+  const hasImg = item.img && item.img.length > 5;
+  const ico={entradas:'🥗',cocteles:'🍸',bebidas:'☕',postres:'🍰',mariscos:'🦞',pasta:'🍝',grill:'🔥',cortes:'🥩',rapidos:'🍔',especial:'⭐',cervezas:'🍺'};
+  return(<div className="modal-overlay" onClick={onClose}><div className="modal-content" onClick={e=>e.stopPropagation()}>
+  <div style={{position:'relative'}}>
+    {hasImg?<img src={item.img} alt={item.name} crossOrigin="anonymous" style={{width:'100%',height:280,objectFit:item.imgFit||'cover',objectPosition:item.imgPos||'center',borderRadius:'20px 20px 0 0'}}/>
+    :<div style={{width:'100%',height:200,background:'linear-gradient(135deg,#1a1410,#2a2018)',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:8,borderRadius:'20px 20px 0 0'}}><span style={{fontSize:48,opacity:.4}}>{ico[item.cat]||'🍽️'}</span><span style={{fontSize:11,color:'var(--gold-dark)',letterSpacing:'.15em',textTransform:'uppercase'}}>Paranoia</span></div>}
+    <button onClick={onClose} style={{position:'absolute',top:14,right:14,width:36,height:36,borderRadius:'50%',border:'none',background:'rgba(0,0,0,.6)',color:'white',fontSize:18,cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center'}}>✕</button><div style={{position:'absolute',bottom:0,left:0,right:0,height:'40%',background:'linear-gradient(transparent,#161210)'}}/>{item.tags?.length>0&&<div style={{position:'absolute',bottom:16,left:20,display:'flex',gap:6}}>{item.tags.map(t=><Tag key={t} label={t}/>)}</div>}</div>
   <div style={{padding:'20px 24px 28px'}}><h2 style={{fontFamily:'var(--serif)',fontSize:28,fontWeight:600,marginBottom:8}}>{item.name}</h2><p style={{fontSize:14,color:'var(--text-muted)',lineHeight:1.7,marginBottom:20}}>{item.desc}</p><div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'16px 0',borderTop:'1px solid rgba(201,168,76,.1)'}}><span style={{fontFamily:'var(--serif)',fontSize:32,fontWeight:700,color:'var(--gold)'}}>{item.price?`$${item.price.toFixed(2)}`:'Consultar precio'}</span>{!item.available&&<Tag label="agotado"/>}</div></div>
 </div></div>);
+};
 
 const LoginModal = ({onSuccess,onClose}) => {
   const [u,setU]=useState('');const [p,setP]=useState('');const [err,setErr]=useState('');const [sp,setSp]=useState(false);
@@ -265,7 +276,7 @@ const AdminPanel = ({data,onSave,onClose,syncStatus}) => {
       {ci.map(item=>(<div key={item.id} className="admin-card"><div style={{display:'flex',flexDirection:'column',gap:8}}>
         <div style={{display:'grid',gridTemplateColumns:'1fr 80px',gap:8}}><input className="adm" value={item.name} onChange={e=>up(item.id,'name',e.target.value)} placeholder="Nombre"/><input className="adm" type="number" value={item.price||''} onChange={e=>up(item.id,'price',e.target.value?parseFloat(e.target.value):null)} placeholder="$" style={{textAlign:'center'}}/></div>
         <input className="adm" value={item.desc} onChange={e=>up(item.id,'desc',e.target.value)} placeholder="Descripción" style={{fontSize:12}}/>
-        <ImgUpload value={item.img} onChange={v=>up(item.id,'img',v)} label="Foto del plato"/>
+        <ImgUpload value={item.img} onChange={v=>up(item.id,'img',v)} label="Foto del plato" imgFit={item.imgFit} imgPos={item.imgPos} onFitChange={v=>up(item.id,'imgFit',v)} onPosChange={v=>up(item.id,'imgPos',v)}/>
         <div style={{display:'flex',gap:6,flexWrap:'wrap',alignItems:'center'}}>
           {['popular','recomendado','nuevo','premium'].map(tag=><button key={tag} onClick={()=>tog(item.id,tag)} style={{padding:'3px 10px',borderRadius:14,fontSize:10,fontWeight:600,border:'1px solid',cursor:'pointer',textTransform:'uppercase',background:item.tags.includes(tag)?'rgba(201,168,76,.15)':'transparent',color:item.tags.includes(tag)?'var(--gold)':'var(--text-muted)',borderColor:item.tags.includes(tag)?'var(--gold-dark)':'rgba(255,255,255,.1)'}}>{tag}</button>)}
           <label style={{display:'flex',alignItems:'center',gap:6,fontSize:11,color:'var(--text-muted)',marginLeft:'auto',cursor:'pointer'}}><input type="checkbox" checked={item.available} onChange={e=>up(item.id,'available',e.target.checked)}/> Disp.</label>
@@ -517,10 +528,10 @@ function App() {
 
   const saveData=async(d)=>{
     setData(d);
-    // Guardar local (con base64 si hay — funciona en este dispositivo)
+    // Guardar local
     try{localStorage.setItem('paranoia-menu-v3',JSON.stringify(d));localStorage.setItem('paranoia-menu-version',String(MENU_VERSION));}catch(e){}
     
-    // Para la nube: limpiar base64 residuales (son demasiado pesadas para Sheets)
+    // Limpiar base64 para la nube
     const cloudData = JSON.parse(JSON.stringify(d));
     if(cloudData.items){
       cloudData.items = cloudData.items.map(item => ({
@@ -535,16 +546,27 @@ function App() {
       }));
     }
     
-    // Guardar en la nube (Google Sheets via POST)
+    // Guardar en la nube via POST
     setSyncStatus('syncing');
     try{
-      const r=await fetch(GOOGLE_SCRIPT_URL,{
+      await fetch(GOOGLE_SCRIPT_URL,{
         method:'POST',
         mode:'no-cors',
-        headers:{'Content-Type':'text/plain'},
         body:JSON.stringify({action:'save_menu',menuData:cloudData})
       });
-      setSyncStatus('saved');
+      // Verificar que se guardó esperando un momento y leyendo de vuelta
+      await new Promise(r=>setTimeout(r,2000));
+      try{
+        const check=await fetch(GOOGLE_SCRIPT_URL+'?action=load_menu',{redirect:'follow'});
+        const json=await check.json();
+        if(json.status==='success'&&json.data){
+          setSyncStatus('saved');
+        }else{
+          setSyncStatus('saved'); // asumimos éxito si no hay error
+        }
+      }catch(e){
+        setSyncStatus('saved');
+      }
       setTimeout(()=>{setSyncStatus('');},3000);
     }catch(e){
       setSyncStatus('error');

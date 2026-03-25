@@ -135,21 +135,66 @@ const Tag = ({label}) => <span className={`tag tag-${label}`}>{label}</span>;
 const ImgUpload = ({value, onChange, label="Imagen", imgFit, imgPos, onFitChange, onPosChange}) => {
   const fileRef = useRef(null);
   const [uploading, setUploading] = useState(false);
-  const toBase64 = (file) => new Promise((res,rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); });
+  const [uploadMsg, setUploadMsg] = useState('');
+  
+  // Comprimir imagen a max 600px y calidad 0.7
+  const compressImage = (file) => new Promise((res) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const MAX = 600;
+        let w = img.width, h = img.height;
+        if (w > h) { if (w > MAX) { h = h * MAX / w; w = MAX; } }
+        else { if (h > MAX) { w = w * MAX / h; h = MAX; } }
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        res(canvas.toDataURL('image/jpeg', 0.7));
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
   
   const uploadToDrive = async (file) => {
     setUploading(true);
+    setUploadMsg('Comprimiendo...');
     try {
-      const b64 = await toBase64(file);
-      const r = await fetch(GOOGLE_SCRIPT_URL, {
+      const b64 = await compressImage(file);
+      const fname = 'paranoia_' + Date.now() + '.jpg';
+      
+      // Paso 1: POST la imagen (no-cors — no podemos leer respuesta pero SÍ llega)
+      setUploadMsg('Subiendo a Drive...');
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        body: JSON.stringify({ action: 'upload_image', image: b64, fileName: 'paranoia_' + Date.now() + '_' + file.name })
+        mode: 'no-cors',
+        body: JSON.stringify({ action: 'upload_image', image: b64, fileName: fname })
       });
-      const json = await r.json();
-      if (json.status === 'success' && json.url) { onChange(json.url); }
-      else { onChange(b64); }
-    } catch(e) { const b64 = await toBase64(file); onChange(b64); }
+      
+      // Paso 2: Esperar a que Drive procese
+      setUploadMsg('Procesando...');
+      await new Promise(r => setTimeout(r, 4000));
+      
+      // Paso 3: GET la última imagen subida (esto SÍ podemos leerlo)
+      setUploadMsg('Obteniendo URL...');
+      const check = await fetch(GOOGLE_SCRIPT_URL + '?action=get_last_image', {redirect:'follow'});
+      const json = await check.json();
+      
+      if (json.status === 'success' && json.url) {
+        onChange(json.url);
+        setUploadMsg('✅ ¡Subida exitosa!');
+      } else {
+        onChange(b64);
+        setUploadMsg('⚠️ Guardada localmente');
+      }
+    } catch(e) {
+      // Fallback: usar base64 comprimida localmente
+      try { const b64 = await compressImage(file); onChange(b64); } catch(e2) {}
+      setUploadMsg('⚠️ Guardada localmente');
+    }
     setUploading(false);
+    setTimeout(() => setUploadMsg(''), 3000);
   };
   
   const fitOpts = ['cover','contain','fill'];
@@ -160,15 +205,16 @@ const ImgUpload = ({value, onChange, label="Imagen", imgFit, imgPos, onFitChange
       <label style={{fontSize:10,color:'var(--gold-dark)',textTransform:'uppercase',letterSpacing:'.1em'}}>{label}</label>
       <div style={{display:'flex',gap:6,alignItems:'center'}}>
         <input className="adm" value={typeof value==='string'&&!value.startsWith('data:')?value:''} onChange={e=>onChange(e.target.value)} placeholder="URL de imagen o sube archivo" style={{fontSize:11,flex:1}}/>
-        <button onClick={()=>fileRef.current?.click()} disabled={uploading} style={{padding:'8px 12px',borderRadius:8,border:'1px solid rgba(201,168,76,.2)',background:uploading?'rgba(201,168,76,.15)':'rgba(201,168,76,.06)',color:'var(--gold)',fontSize:11,cursor:uploading?'wait':'pointer',whiteSpace:'nowrap'}}>{uploading?'⏳ Subiendo...':'📁 Subir'}</button>
+        <button onClick={()=>fileRef.current?.click()} disabled={uploading} style={{padding:'8px 12px',borderRadius:8,border:'1px solid rgba(201,168,76,.2)',background:uploading?'rgba(201,168,76,.15)':'rgba(201,168,76,.06)',color:'var(--gold)',fontSize:11,cursor:uploading?'wait':'pointer',whiteSpace:'nowrap'}}>{uploading?'⏳ Subiendo...':'📁 Subir a Drive'}</button>
         <input ref={fileRef} type="file" accept="image/*" style={{display:'none'}} onChange={async e=>{const f=e.target.files?.[0];if(f)uploadToDrive(f);}}/>
       </div>
-      {uploading&&<p style={{fontSize:10,color:'#42A5F5'}}>☁️ Subiendo imagen a Google Drive...</p>}
+      {uploadMsg&&<p style={{fontSize:10,color:uploadMsg.includes('✅')?'#66BB6A':uploadMsg.includes('⚠️')?'#FFB74D':'#42A5F5'}}>{uploadMsg}</p>}
       {value && <div style={{display:'flex',flexDirection:'column',gap:6}}>
         <div style={{display:'flex',gap:6,alignItems:'center'}}>
           <img src={value} alt="" style={{width:80,height:55,borderRadius:6,objectFit:imgFit||'cover',objectPosition:imgPos||'center',background:'#1a1512',border:'1px solid rgba(201,168,76,.15)'}}/>
           <button onClick={()=>onChange('')} style={{padding:'4px 10px',borderRadius:6,border:'1px solid rgba(239,83,80,.3)',background:'rgba(239,83,80,.08)',color:'#EF5350',fontSize:10,cursor:'pointer'}}>🗑</button>
           {typeof value==='string'&&value.startsWith('data:')&&<span style={{fontSize:9,color:'#FFB74D'}}>⚠️ Local</span>}
+          {typeof value==='string'&&value.includes('drive.google.com')&&<span style={{fontSize:9,color:'#66BB6A'}}>☁️ Drive</span>}
         </div>
         {onFitChange&&<div style={{display:'flex',gap:3,flexWrap:'wrap',alignItems:'center'}}>
           <span style={{fontSize:9,color:'var(--text-muted)'}}>Ajuste:</span>

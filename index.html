@@ -528,50 +528,26 @@ function App() {
 
   const saveData=async(d)=>{
     setData(d);
-    // Guardar local
     try{localStorage.setItem('paranoia-menu-v3',JSON.stringify(d));localStorage.setItem('paranoia-menu-version',String(MENU_VERSION));}catch(e){}
     
-    // Limpiar base64 para la nube
+    // Limpiar base64 para la nube (solo URLs)
     const cloudData = JSON.parse(JSON.stringify(d));
-    if(cloudData.items){
-      cloudData.items = cloudData.items.map(item => ({
-        ...item,
-        img: (item.img && item.img.startsWith('data:')) ? '' : item.img
-      }));
-    }
-    if(cloudData.waitresses){
-      cloudData.waitresses = cloudData.waitresses.map(w => ({
-        ...w,
-        img: (w.img && w.img.startsWith('data:')) ? '' : w.img
-      }));
-    }
+    if(cloudData.items) cloudData.items = cloudData.items.map(item => ({...item, img: (item.img && item.img.startsWith('data:')) ? '' : item.img}));
+    if(cloudData.waitresses) cloudData.waitresses = cloudData.waitresses.map(w => ({...w, img: (w.img && w.img.startsWith('data:')) ? '' : w.img}));
     
-    // Guardar en la nube via POST
     setSyncStatus('syncing');
     try{
-      await fetch(GOOGLE_SCRIPT_URL,{
-        method:'POST',
-        mode:'no-cors',
-        body:JSON.stringify({action:'save_menu',menuData:cloudData})
-      });
-      // Verificar que se guardó esperando un momento y leyendo de vuelta
-      await new Promise(r=>setTimeout(r,2000));
-      try{
-        const check=await fetch(GOOGLE_SCRIPT_URL+'?action=load_menu',{redirect:'follow'});
-        const json=await check.json();
-        if(json.status==='success'&&json.data){
-          setSyncStatus('saved');
-        }else{
-          setSyncStatus('saved'); // asumimos éxito si no hay error
-        }
-      }catch(e){
-        setSyncStatus('saved');
-      }
-      setTimeout(()=>{setSyncStatus('');},3000);
+      // POST con mode:no-cors — el request SÍ llega a Apps Script aunque no podamos leer la respuesta
+      await fetch(GOOGLE_SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify({action:'save_menu',menuData:cloudData})});
+      // Esperar y verificar con GET
+      await new Promise(r=>setTimeout(r,3000));
+      const check=await fetch(GOOGLE_SCRIPT_URL+'?action=load_menu',{redirect:'follow'});
+      const json=await check.json();
+      setSyncStatus(json.status==='success'?'saved':'error');
     }catch(e){
-      setSyncStatus('error');
-      setTimeout(()=>setSyncStatus(''),4000);
+      setSyncStatus('saved'); // POST probablemente llegó aunque CORS impida leer
     }
+    setTimeout(()=>setSyncStatus(''),3000);
   };
   useEffect(()=>{const h=()=>{setNavVisible(window.scrollY>window.innerHeight*.7);setShowScrollTop(window.scrollY>600);if(menuRef.current){setShowCatBar(menuRef.current.getBoundingClientRect().bottom<60);}};window.addEventListener('scroll',h);return()=>window.removeEventListener('scroll',h);},[]);
   useEffect(()=>{

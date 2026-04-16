@@ -3,7 +3,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Paranoia RESTOBAR — Menú Digital</title>
+<title>Paranoia RESTOBAR ‚Äî Men√∫ Digital</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
@@ -17,18 +17,18 @@ const MENU_VERSION = 12;
 
 const CAT_THEMES = {
   especial:        { c1:'201,168,76',  c2:'160,110,20',  c3:'255,200,80',  label:'Dorado Imperial' },
-  entradas:        { c1:'80,160,80',   c2:'40,100,60',   c3:'120,200,100', label:'Verde Jardín' },
+  entradas:        { c1:'80,160,80',   c2:'40,100,60',   c3:'120,200,100', label:'Verde Jard√≠n' },
   grill:           { c1:'220,80,30',   c2:'160,40,10',   c3:'255,140,40',  label:'Fuego Vivo' },
   cortes:          { c1:'180,120,40',  c2:'120,60,10',   c3:'240,180,60',  label:'Dorado Premium' },
-  mariscos:        { c1:'30,120,180',  c2:'10,60,120',   c3:'60,180,220',  label:'Océano Profundo' },
+  mariscos:        { c1:'30,120,180',  c2:'10,60,120',   c3:'60,180,220',  label:'Oc√©ano Profundo' },
   pasta:           { c1:'200,120,40',  c2:'150,70,20',   c3:'240,160,60',  label:'Trigo Dorado' },
-  rapidos:         { c1:'220,160,20',  c2:'180,100,10',  c3:'255,200,40',  label:'Energía' },
+  rapidos:         { c1:'220,160,20',  c2:'180,100,10',  c3:'255,200,40',  label:'Energ√≠a' },
   acompanamientos: { c1:'100,160,80',  c2:'60,110,50',   c3:'140,190,100', label:'Campo Verde' },
   cocteles:        { c1:'120,60,200',  c2:'60,20,140',   c3:'180,100,255', label:'Noche Violeta' },
-  cervezas:        { c1:'200,140,30',  c2:'150,90,10',   c3:'240,180,50',  label:'Ámbar Dorado' },
+  cervezas:        { c1:'200,140,30',  c2:'150,90,10',   c3:'240,180,50',  label:'√Åmbar Dorado' },
   vinos:           { c1:'160,20,60',   c2:'100,10,30',   c3:'220,60,100',  label:'Burdeos' },
   bebidasfrias:    { c1:'20,160,200',  c2:'10,100,150',  c3:'60,210,240',  label:'Cristal Azul' },
-  bebidascalientes:{ c1:'180,100,40',  c2:'120,60,20',   c3:'220,140,70',  label:'Café Cálido' },
+  bebidascalientes:{ c1:'180,100,40',  c2:'120,60,20',   c3:'220,140,70',  label:'Caf√© C√°lido' },
   postres:         { c1:'200,80,140',  c2:'140,40,100',  c3:'240,120,180', label:'Rosa Dulce' },
 };
 
@@ -51,150 +51,150 @@ const CAT_IMAGES = {
 
 const D = {
   categories: [
-    { id:"especial", name:"Especial de la Casa", icon:"⭐" },
-    { id:"entradas", name:"Entradas", icon:"🥗" },
-    { id:"grill", name:"Grill", icon:"🔥" },
-    { id:"cortes", name:"Cortes Premium", icon:"🥩" },
-    { id:"mariscos", name:"Mariscos", icon:"🦞" },
-    { id:"pasta", name:"Pasta", icon:"🍝" },
-    { id:"rapidos", name:"Rápidos", icon:"🍔" },
-    { id:"bebidasfrias", name:"Bebidas Frías", icon:"🥤" },
-    { id:"bebidascalientes", name:"Bebidas Calientes", icon:"☕" },
-    { id:"cervezas", name:"Cerveza", icon:"🍺" },
-    { id:"vinos", name:"Vinos y Sangría", icon:"🍷" },
-    { id:"cocteles", name:"Cócteles", icon:"🍸" },
-    { id:"postres", name:"Postres", icon:"🍰" },
+    { id:"especial", name:"Especial de la Casa", icon:"‚≠ê" },
+    { id:"entradas", name:"Entradas", icon:"ü•ó" },
+    { id:"grill", name:"Grill", icon:"üî•" },
+    { id:"cortes", name:"Cortes Premium", icon:"ü•©" },
+    { id:"mariscos", name:"Mariscos", icon:"ü¶û" },
+    { id:"pasta", name:"Pasta", icon:"üçù" },
+    { id:"rapidos", name:"R√°pidos", icon:"üçî" },
+    { id:"bebidasfrias", name:"Bebidas Fr√≠as", icon:"ü•§" },
+    { id:"bebidascalientes", name:"Bebidas Calientes", icon:"‚òï" },
+    { id:"cervezas", name:"Cerveza", icon:"üç∫" },
+    { id:"vinos", name:"Vinos y Sangr√≠a", icon:"üç∑" },
+    { id:"cocteles", name:"C√≥cteles", icon:"üç∏" },
+    { id:"postres", name:"Postres", icon:"üç∞" },
+    { id:"cat_1775257872330", name:"JUEGOS", icon:"üçΩÔ∏è" },
   ],
   items: [
     // ESPECIAL DE LA CASA
-    {id:50,cat:"especial",name:"Picadita Paranoia",desc:"Ribeye, pechuga, chorizo paisa, papas salteadas, camarón salteado, choclo y ensalada",price:20,img:"",tags:["popular","recomendado"],available:true},
-    {id:51,cat:"especial",name:"Cordero en Salsa de Vino Tinto",desc:"Puré de papa y vegetales salteados",price:null,img:"",tags:["premium"],available:true},
-    {id:67,cat:"especial",name:"Paranoia Black",desc:"Cóctel exclusivo de la casa",price:6.5,img:"",tags:["premium","nuevo"],available:true},
-    {id:68,cat:"especial",name:"Paranoia Tropical",desc:"Cóctel tropical exclusivo de la casa",price:6.5,img:"",tags:["premium"],available:true},
-    {id:69,cat:"especial",name:"Paranoia Fire",desc:"Cóctel picante exclusivo de la casa",price:6.5,img:"",tags:["premium","nuevo"],available:true},
+    {id:50,cat:"especial",name:"Picadita Paranoia",desc:"Ribeye, pechuga, chorizo paisa, papas salteadas, camar√≥n salteado, choclo y ensalada",price:26,img:"",tags:["popular","recomendado"],available:true},
+    {id:51,cat:"especial",name:"Rack de Cordero en salsa de Vino Tinto",desc:"Pur√© de papa y vegetales salteados",price:18.75,img:"",tags:["premium"],available:true},
+    {id:67,cat:"especial",name:"Paranoia Black",desc:"C√≥ctel exclusivo de la casa",price:6.5,img:"",tags:["premium","nuevo"],available:true},
+    {id:68,cat:"especial",name:"Paranoia Tropical",desc:"C√≥ctel tropical exclusivo de la casa",price:6.5,img:"",tags:["premium"],available:true},
+    {id:69,cat:"especial",name:"Paranoia Fire",desc:"C√≥ctel picante exclusivo de la casa",price:6.5,img:"",tags:["premium","nuevo"],available:true},
     // ENTRADAS
     {id:100,cat:"entradas",name:"Patacones Gratinados",desc:"Patacones crujientes gratinados con queso y toppings",price:3,img:"",tags:["nuevo"],available:true},
     {id:101,cat:"entradas",name:"Maduritos Gratinados",desc:"Maduros dulces gratinados con queso derretido",price:3,img:"",tags:["nuevo"],available:true},
     // GRILL
-    {id:1,cat:"grill",name:"Pollo",desc:"Ensalada, moro gratinado, choclo salteado y chorizo paisa",price:null,img:"",tags:[],available:true},
-    {id:2,cat:"grill",name:"Chuleta",desc:"Ensalada, moro gratinado, choclo salteado y chorizo paisa",price:null,img:"",tags:[],available:true},
-    {id:3,cat:"grill",name:"Cerdo",desc:"Ensalada, moro gratinado, choclo salteado y chorizo paisa",price:null,img:"",tags:[],available:true},
-    {id:4,cat:"grill",name:"Costilla BBQ",desc:"Ensalada, moro gratinado, choclo salteado y chorizo paisa",price:null,img:"",tags:["popular"],available:true},
-    {id:5,cat:"grill",name:"Panceta",desc:"Ensalada, moro gratinado, choclo salteado y chorizo paisa",price:null,img:"",tags:[],available:true},
+    {id:1,cat:"grill",name:"Pollo",desc:"Ensalada, moro gratinado, choclo salteado y chorizo paisa",price:7.5,img:"",tags:[],available:true},
+    {id:2,cat:"grill",name:"Chuleta",desc:"Ensalada, moro gratinado, choclo salteado y chorizo paisa",price:7.5,img:"",tags:[],available:true},
+    {id:3,cat:"grill",name:"Cerdo",desc:"Ensalada, moro gratinado, choclo salteado y chorizo paisa",price:7.5,img:"",tags:[],available:true},
+    {id:4,cat:"grill",name:"Costilla BBQ",desc:"Ensalada, moro gratinado, choclo salteado y chorizo paisa",price:8,img:"",tags:["popular"],available:true},
+    {id:5,cat:"grill",name:"Panceta",desc:"Ensalada, moro gratinado, choclo salteado y chorizo paisa",price:7.5,img:"",tags:[],available:true},
     // CORTES PREMIUM
-    {id:10,cat:"cortes",name:"Cowboy",desc:"Ensalada, choclo salteado y 2 guarniciones a elección",price:17,img:"",tags:["premium"],available:true},
-    {id:11,cat:"cortes",name:"Ribeye",desc:"Ensalada, choclo salteado y 2 guarniciones a elección",price:15,img:"",tags:["popular"],available:true},
-    {id:12,cat:"cortes",name:"Picaña",desc:"Ensalada, choclo salteado y 2 guarniciones a elección",price:15,img:"",tags:["recomendado"],available:true},
-    {id:13,cat:"cortes",name:"Lomo Fino Chimichurri",desc:"Ensalada, choclo salteado y 2 guarniciones a elección",price:14,img:"",tags:[],available:true},
-    {id:14,cat:"cortes",name:"Lomo Fino Salsa de Camarón",desc:"Ensalada, choclo salteado y 2 guarniciones a elección",price:15,img:"",tags:["recomendado"],available:true},
-    {id:15,cat:"cortes",name:"Lomo Fino a la Pimienta",desc:"Ensalada, choclo salteado y 2 guarniciones a elección",price:14.5,img:"",tags:[],available:true},
-    {id:16,cat:"cortes",name:"Lomo Fino Salsa de Champiñones",desc:"Ensalada, choclo salteado y 2 guarniciones a elección",price:14.5,img:"",tags:[],available:true},
-    {id:17,cat:"cortes",name:"PorterHouse",desc:"Ensalada, choclo salteado y 2 guarniciones a elección",price:18,img:"",tags:["premium"],available:true},
-    {id:18,cat:"cortes",name:"Filet Mignon",desc:"Ensalada, choclo salteado y 2 guarniciones a elección",price:16,img:"",tags:["premium"],available:true},
+    {id:10,cat:"cortes",name:"Cowboy",desc:"Ensalada, choclo salteado y 2 guarniciones a elecci√≥n",price:17,img:"",tags:["premium"],available:true},
+    {id:11,cat:"cortes",name:"Ribeye",desc:"Ensalada, choclo salteado y 2 guarniciones a elecci√≥n",price:15,img:"",tags:["popular"],available:true},
+    {id:12,cat:"cortes",name:"Pica√±a",desc:"Ensalada, choclo salteado y 2 guarniciones a elecci√≥n",price:15,img:"",tags:["recomendado"],available:true},
+    {id:13,cat:"cortes",name:"Lomo Fino Chimichurri",desc:"Ensalada, choclo salteado y 2 guarniciones a elecci√≥n",price:14,img:"",tags:[],available:true},
+    {id:14,cat:"cortes",name:"Lomo Fino Salsa de Camar√≥n",desc:"Ensalada, choclo salteado y 2 guarniciones a elecci√≥n",price:15,img:"",tags:["recomendado"],available:true},
+    {id:15,cat:"cortes",name:"Lomo Fino a la Pimienta",desc:"Ensalada, choclo salteado y 2 guarniciones a elecci√≥n",price:14.5,img:"",tags:[],available:true},
+    {id:16,cat:"cortes",name:"Lomo Fino Salsa de Champi√±ones",desc:"Ensalada, choclo salteado y 2 guarniciones a elecci√≥n",price:14.5,img:"",tags:[],available:true},
+    {id:17,cat:"cortes",name:"T-Bone",desc:"Ensalada, choclo salteado y 2 guarniciones a elecci√≥n",price:15,img:"",tags:["premium"],available:true},
+    {id:18,cat:"cortes",name:"Filet Mignon",desc:"Ensalada, choclo salteado y 2 guarniciones a elecci√≥n",price:16,img:"",tags:["premium"],available:true},
     // MARISCOS
-    {id:20,cat:"mariscos",name:"Langosta Salsa de Camarón",desc:"Verduras salteadas y papa chaucha",price:20,img:"",tags:["premium"],available:true},
-    {id:21,cat:"mariscos",name:"Pulpo y Langostino a la Parrilla",desc:"Papas fritas y ensalada fresca",price:null,img:"",tags:["recomendado"],available:true},
-    {id:22,cat:"mariscos",name:"Camarón Reventado",desc:"Patacones, ensalada criolla y arroz blanco",price:null,img:"",tags:["popular"],available:true},
-    {id:23,cat:"mariscos",name:"Rollitos de Corvina",desc:"Salsa de camarón, puré de papa y ensalada",price:15,img:"",tags:[],available:true},
-    {id:24,cat:"mariscos",name:"Salmón en Salsa de Limón",desc:"Puré de papa y ensalada",price:8,img:"",tags:["nuevo"],available:true},
-    {id:25,cat:"mariscos",name:"Camarón Salteado",desc:"Ensalada criolla, patacones y arroz blanco",price:null,img:"",tags:[],available:true},
+    {id:20,cat:"mariscos",name:"Arroz Marinero ",desc:"Variedades de mariscos, patacones y ensalada criolla",price:10,img:"",tags:["premium"],available:true},
+    {id:22,cat:"mariscos",name:"Camar√≥n Reventado",desc:"Patacones, ensalada criolla y arroz blanco",price:9,img:"",tags:["popular"],available:true},
+    {id:23,cat:"mariscos",name:"Filete de Robalo",desc:"Salsa de camar√≥n, pur√© de papa y ensalada",price:15,img:"",tags:[],available:true},
+    {id:25,cat:"mariscos",name:"Camar√≥n Salteado",desc:"Ensalada criolla, patacones y arroz blanco",price:7,img:"",tags:[],available:true},
+    {id:307,cat:"mariscos",name:"Tilapia en salsa de Mariscos",desc:"Ensalada criolla, papa chaucha y arroz blanco",price:12,img:"",tags:[],available:true},
+    {id:308,cat:"mariscos",name:"Ceviche de Camar√≥n",desc:"Patacones y arroz blanco",price:8,img:"",tags:[],available:true},
     // PASTA
-    {id:40,cat:"pasta",name:"Fettuccine Alfredo",desc:"Cebolla perla, tocino, jamón, crema de leche y pollo 150gr",price:null,img:"",tags:["popular"],available:true},
-    {id:41,cat:"pasta",name:"Pollo y Camarón",desc:"Cebolla perla, tocino, jamón, crema de leche, pollo y camarón 150gr",price:null,img:"",tags:["recomendado"],available:true},
-    // RÁPIDOS
-    {id:30,cat:"rapidos",name:"Hamburguesa de Pollo",desc:"Acompañada de papas fritas",price:5.5,img:"",tags:[],available:true},
-    {id:31,cat:"rapidos",name:"Hamburguesa Carbonara",desc:"Carne molida 150gr, guanciale, parmesano y cheddar",price:6,img:"",tags:["nuevo"],available:true},
-    {id:32,cat:"rapidos",name:"Nuggets de Pollo",desc:"Con papas fritas crujientes",price:5,img:"",tags:[],available:true},
-    {id:33,cat:"rapidos",name:"Alitas x6",desc:"Papas fritas, salsas: BBQ, Honey, Garlic, Buffalo",price:null,img:"",tags:["popular"],available:true},
-    {id:34,cat:"rapidos",name:"Alitas x10",desc:"Papas fritas, salsas: BBQ, Honey, Garlic, Buffalo",price:null,img:"",tags:[],available:true},
-    {id:35,cat:"rapidos",name:"Pollo Crispy",desc:"Con papas fritas crujientes",price:5,img:"",tags:[],available:true},
-    // ACOMPAÑAMIENTOS
+    {id:40,cat:"pasta",name:"Fettuccine Alfredo",desc:"",price:7,img:"",tags:["popular"],available:true},
+    {id:41,cat:"pasta",name:"Fetuccini con Pollo",desc:"",price:8,img:"",tags:["recomendado"],available:true},
+    {id:309,cat:"pasta",name:"Fetuccini con Camar√≥n",desc:"Descripci√≥n",price:9,img:"",tags:[],available:true},
+    // R√ÅPIDOS
+    {id:30,cat:"rapidos",name:"Hamburguesa de Pollo",desc:"Acompa√±ada de papas cheddar",price:5.5,img:"",tags:[],available:true},
+    {id:31,cat:"rapidos",name:"Hamburguesa Carbonara",desc:"Carne molida 150gr, guanchale, parmesano y papas cheddar",price:6,img:"",tags:["nuevo"],available:true},
+    {id:32,cat:"rapidos",name:"Nuggets de Pollo",desc:"Con papas cheddar",price:5,img:"",tags:[],available:true},
+    {id:33,cat:"rapidos",name:"Alitas x6",desc:"Papas cheddar, salsas: BBQ, Honey, Garlic, Buffalo",price:6,img:"",tags:["popular"],available:true},
+    {id:34,cat:"rapidos",name:"Alitas x12",desc:"Papas cheddar, salsas: BBQ, Honey, Garlic, Buffalo",price:10,img:"",tags:[],available:true},
+    {id:35,cat:"rapidos",name:"Pollo Crispy",desc:"Con papas cheddar",price:5,img:"",tags:[],available:true},
+    // ACOMPA√ëAMIENTOS
     {id:300,cat:"guarniciones",name:"Ensalada",desc:"",price:null,img:"",tags:[],available:true},
     {id:301,cat:"guarniciones",name:"Moro Gratinado",desc:"",price:null,img:"",tags:[],available:true},
     {id:302,cat:"guarniciones",name:"Choclo Salteado",desc:"",price:null,img:"",tags:[],available:true},
     {id:303,cat:"guarniciones",name:"Chorizo Paisa",desc:"",price:null,img:"",tags:[],available:true},
-    {id:304,cat:"guarniciones",name:"Puré de Papa",desc:"",price:null,img:"",tags:[],available:true},
+    {id:304,cat:"guarniciones",name:"Pur√© de Papa",desc:"",price:null,img:"",tags:[],available:true},
     {id:305,cat:"guarniciones",name:"Papas Salteadas",desc:"",price:null,img:"",tags:[],available:true},
     {id:306,cat:"guarniciones",name:"Papa Frita",desc:"",price:null,img:"",tags:[],available:true},
-    // CÓCTELES
-    {id:60,cat:"cocteles",name:"Mojito Clásico",desc:"Ron, hierbabuena, limón, azúcar y soda",price:3.5,img:"",tags:[],available:true},
+    // C√ìCTELES
+    {id:60,cat:"cocteles",name:"Mojito Cl√°sico",desc:"Ron, hierbabuena, lim√≥n, az√∫car y soda",price:3.5,img:"",tags:[],available:true},
     {id:61,cat:"cocteles",name:"Mojito Frutos Rojos",desc:"Ron, mix de frutos rojos, hierbabuena y soda",price:5,img:"",tags:["popular"],available:true},
-    {id:72,cat:"cocteles",name:"Mojito Mango",desc:"Ron, mango natural, hierbabuena y soda",price:5,img:"",tags:[],available:true},
-    {id:62,cat:"cocteles",name:"Piña Colada Normal",desc:"Ron, crema de coco y jugo de piña",price:5,img:"",tags:[],available:true},
-    {id:73,cat:"cocteles",name:"Piña Colada Blue",desc:"Ron, crema de coco, jugo de piña y blue curaçao",price:5,img:"",tags:[],available:true},
-    {id:74,cat:"cocteles",name:"Cubata",desc:"Ron con cola",price:3.5,img:"",tags:[],available:true},
-    {id:63,cat:"cocteles",name:"Moscow Mule",desc:"Vodka, ginger beer y limón fresco",price:5,img:"",tags:[],available:true},
-    {id:64,cat:"cocteles",name:"Margarita Clásica",desc:"Tequila, triple sec y jugo de limón",price:4,img:"",tags:[],available:true},
-    {id:75,cat:"cocteles",name:"Margarita Frozen",desc:"Margarita helada con tequila y limón",price:4.5,img:"",tags:[],available:true},
-    {id:76,cat:"cocteles",name:"Padrino",desc:"Cóctel premium de la casa",price:5,img:"",tags:[],available:true},
-    {id:77,cat:"cocteles",name:"Ruso Blanco",desc:"Vodka, licor de café y crema",price:5,img:"",tags:[],available:true},
-    {id:65,cat:"cocteles",name:"Espresso Martini",desc:"Vodka, licor de café y espresso doble",price:5,img:"",tags:["recomendado"],available:true},
-    {id:78,cat:"cocteles",name:"Laguna Azul",desc:"Cóctel azul tropical",price:4.5,img:"",tags:[],available:true},
-    {id:79,cat:"cocteles",name:"Machupichu",desc:"Cóctel inspirado en los Andes",price:4.5,img:"",tags:[],available:true},
-    {id:86,cat:"cocteles",name:"Galaxia",desc:"Cóctel de la casa",price:5,img:"",tags:[],available:true},
-    {id:87,cat:"cocteles",name:"Medusa",desc:"Cóctel premium especial",price:6,img:"",tags:["premium"],available:true},
+    {id:72,cat:"cocteles",name:"Mojito Marac√∫ya",desc:"Ron, mango natural, hierbabuena y soda",price:5,img:"",tags:[],available:true},
+    {id:62,cat:"cocteles",name:"Pi√±a Colada Normal",desc:"Ron, crema de coco y jugo de pi√±a",price:5,img:"",tags:[],available:true},
+    {id:73,cat:"cocteles",name:"Pi√±a Colada Blue",desc:"Ron, crema de coco, jugo de pi√±a y blue cura√ßao",price:5,img:"",tags:[],available:true},
+    {id:74,cat:"cocteles",name:"Cuba Libre",desc:"Ron con cola",price:3.5,img:"",tags:[],available:true},
+    {id:63,cat:"cocteles",name:"Moscow Mule",desc:"Vodka, ginger beer y lim√≥n fresco",price:5,img:"",tags:[],available:true},
+    {id:64,cat:"cocteles",name:"Margarita Cl√°sica",desc:"Tequila, triple sec y jugo de lim√≥n",price:4,img:"",tags:[],available:true},
+    {id:75,cat:"cocteles",name:"Margarita Frozen",desc:"Margarita helada con tequila y lim√≥n",price:4.5,img:"",tags:[],available:true},
+    {id:76,cat:"cocteles",name:"Padrino",desc:"C√≥ctel premium de la casa",price:5,img:"",tags:[],available:true},
+    {id:77,cat:"cocteles",name:"Ruso Negro",desc:"Vodka, licor de caf√© ",price:5,img:"",tags:[],available:true},
+    {id:65,cat:"cocteles",name:"Espresso Martini",desc:"Vodka, licor de caf√© y espresso doble",price:5,img:"",tags:["recomendado"],available:true},
+    {id:78,cat:"cocteles",name:"Laguna Azul",desc:"C√≥ctel azul tropical",price:4.5,img:"",tags:[],available:true},
+    {id:79,cat:"cocteles",name:"Machupichu",desc:"C√≥ctel inspirado en los Andes",price:4.5,img:"",tags:[],available:true},
     {id:66,cat:"cocteles",name:"Long Island",desc:"Vodka, ron, tequila, gin, triple sec y cola",price:5,img:"",tags:[],available:true},
-    {id:88,cat:"cocteles",name:"Palomita",desc:"Cóctel fresco y ligero",price:5,img:"",tags:[],available:true},
+    {id:88,cat:"cocteles",name:"Paloma",desc:"C√≥ctel fresco y ligero",price:5,img:"",tags:[],available:true},
     {id:89,cat:"cocteles",name:"Whisky a las Rocas",desc:"Whisky servido con hielo",price:5,img:"",tags:[],available:true},
-    {id:91,cat:"cocteles",name:"Mandarina",desc:"Cóctel cítrico de mandarina",price:4.5,img:"",tags:[],available:true},
-    {id:92,cat:"cocteles",name:"Paraíso Verde",desc:"Cóctel tropical verde",price:4.5,img:"",tags:[],available:true},
-    {id:93,cat:"cocteles",name:"Vampiro",desc:"Cóctel oscuro de la casa",price:5,img:"",tags:[],available:true},
-    {id:94,cat:"cocteles",name:"Gin Tonic Limón",desc:"Gin con tónica y limón fresco",price:4,img:"",tags:[],available:true},
-    {id:95,cat:"cocteles",name:"Gin Tonic Frutos Rojos",desc:"Gin con tónica y mix de frutos rojos",price:5,img:"",tags:[],available:true},
-    // CERVEZAS — Micheladas y Cheladas primero
-    {id:96,cat:"cervezas",name:"Michelada Limón",desc:"Cerveza con limón y especias",price:2,img:"",tags:[],available:true},
-    {id:97,cat:"cervezas",name:"Michelada Maracuyá",desc:"Cerveza con maracuyá y especias",price:2.5,img:"",tags:[],available:true},
-    {id:98,cat:"cervezas",name:"Michelada Mango",desc:"Cerveza con mango y especias",price:2.5,img:"",tags:[],available:true},
-    {id:99,cat:"cervezas",name:"Chelada Limón",desc:"Cerveza estilo chelada con limón",price:2,img:"",tags:[],available:true},
-    {id:110,cat:"cervezas",name:"Chelada Maracuyá",desc:"Cerveza estilo chelada con maracuyá",price:2.5,img:"",tags:[],available:true},
+    {id:91,cat:"cocteles",name:"Mandarina",desc:"C√≥ctel c√≠trico de mandarina",price:4.5,img:"",tags:[],available:false},
+    {id:92,cat:"cocteles",name:"Para√≠so Verde",desc:"C√≥ctel tropical verde",price:4.5,img:"",tags:[],available:true},
+    {id:93,cat:"cocteles",name:"Vampiro",desc:"C√≥ctel oscuro de la casa",price:5,img:"",tags:[],available:true},
+    {id:94,cat:"cocteles",name:"Gin Tonic Lim√≥n",desc:"Gin con t√≥nica y lim√≥n fresco",price:4,img:"",tags:[],available:true},
+    {id:95,cat:"cocteles",name:"Gin Tonic Frutos Rojos",desc:"Gin con t√≥nica y mix de frutos rojos",price:5,img:"",tags:[],available:true},
+    // CERVEZAS ‚Äî Micheladas y Cheladas primero
+    {id:96,cat:"cervezas",name:"Michelada Lim√≥n",desc:"Cerveza con lim√≥n y especias",price:2,img:"",tags:[],available:true},
+    {id:97,cat:"cervezas",name:"Michelada Maracuy√°",desc:"Cerveza con maracuy√° y especias",price:2.5,img:"",tags:[],available:true},
+    {id:99,cat:"cervezas",name:"Chelada Lim√≥n",desc:"Cerveza estilo chelada con lim√≥n",price:2,img:"",tags:[],available:true},
+    {id:110,cat:"cervezas",name:"Chelada Maracuy√°",desc:"Cerveza estilo chelada con maracuy√°",price:2.5,img:"",tags:[],available:true},
     {id:200,cat:"cervezas",name:"Heineken",desc:"Cerveza holandesa premium lager",price:2.5,img:"",tags:[],available:true},
     {id:201,cat:"cervezas",name:"Corona",desc:"Cerveza mexicana tipo pilsner",price:2.5,img:"",tags:["popular"],available:true},
-    {id:202,cat:"cervezas",name:"Club",desc:"Cerveza ecuatoriana clásica",price:2,img:"",tags:[],available:true},
+    {id:202,cat:"cervezas",name:"Club",desc:"Cerveza ecuatoriana cl√°sica",price:2,img:"",tags:[],available:true},
     {id:203,cat:"cervezas",name:"Club Platinum",desc:"Cerveza ecuatoriana premium",price:2,img:"",tags:[],available:true},
     {id:204,cat:"cervezas",name:"Modelo",desc:"Cerveza mexicana estilo Vienna lager",price:3.5,img:"",tags:["recomendado"],available:true},
     {id:205,cat:"cervezas",name:"Sol",desc:"Cerveza mexicana ligera y refrescante",price:2.5,img:"",tags:[],available:true},
-    // VINOS & SANGRÍAS
-    {id:130,cat:"vinos",name:"Botella de Vino",desc:"Vino selecto — consultar variedades disponibles",price:25,img:"",tags:["recomendado"],available:true},
-    {id:90,cat:"vinos",name:"Tinto de Verano",desc:"Vino tinto con gaseosa y limón",price:5,img:"",tags:[],available:true},
+    // VINOS & SANGR√çAS
+    {id:130,cat:"vinos",name:"Botella de Vino",desc:"Vino selecto ‚Äî consultar variedades disponibles",price:25,img:"",tags:["recomendado"],available:true},
+    {id:90,cat:"vinos",name:"Tinto de Verano",desc:"Vino tinto con gaseosa y lim√≥n",price:5,img:"",tags:[],available:true},
     {id:111,cat:"vinos",name:"Vino Hervido Copa",desc:"Copa de vino caliente con especias",price:5,img:"",tags:[],available:true},
     {id:112,cat:"vinos",name:"Vino Hervido Jarra",desc:"Jarra de vino caliente con especias",price:18,img:"",tags:[],available:true},
-    {id:70,cat:"vinos",name:"Sangría Copa",desc:"Vino tinto, frutas frescas y especias",price:5,img:"",tags:[],available:true},
-    {id:71,cat:"vinos",name:"Sangría Jarra",desc:"Vino tinto, frutas frescas — para compartir",price:15,img:"",tags:[],available:true},
-    // BEBIDAS FRÍAS — Limonadas, Jugos, Cafés fríos, Batidos, Gaseosas, Agua
-    {id:80,cat:"bebidasfrias",name:"Limonada Clásica",desc:"Limonada natural recién preparada",price:2,img:"",tags:[],available:true},
+    {id:70,cat:"vinos",name:"Sangr√≠a Copa",desc:"Vino tinto, frutas frescas y especias",price:5,img:"",tags:[],available:true},
+    {id:71,cat:"vinos",name:"Sangr√≠a Jarra",desc:"Vino tinto, frutas frescas ‚Äî para compartir",price:15,img:"",tags:[],available:true},
+    // BEBIDAS FR√çAS ‚Äî Limonadas, Jugos, Caf√©s fr√≠os, Batidos, Gaseosas, Agua
+    {id:80,cat:"bebidasfrias",name:"Limonada Cl√°sica",desc:"Limonada natural reci√©n preparada",price:2,img:"",tags:[],available:true},
     {id:81,cat:"bebidasfrias",name:"Limonada Frutos Rojos",desc:"Limonada con mix de frutos rojos",price:2.5,img:"",tags:["popular"],available:true},
-    {id:113,cat:"bebidasfrias",name:"Limonada Coco",desc:"Limonada con crema de coco",price:3,img:"",tags:[],available:true},
-    {id:114,cat:"bebidasfrias",name:"Limonada Mango",desc:"Limonada con mango natural",price:3,img:"",tags:[],available:true},
-    {id:116,cat:"bebidasfrias",name:"Maracuyá",desc:"Jugo natural de maracuyá",price:2.5,img:"",tags:[],available:true},
-    {id:118,cat:"bebidasfrias",name:"Jugo de Piña",desc:"Jugo natural de piña",price:2.5,img:"",tags:[],available:true},
-    {id:115,cat:"bebidasfrias",name:"Piña Coco",desc:"Jugo de piña con crema de coco",price:3,img:"",tags:[],available:true},
-    {id:117,cat:"bebidasfrias",name:"Jamaica Piña",desc:"Jugo de jamaica con piña",price:3,img:"",tags:[],available:true},
-    {id:128,cat:"bebidasfrias",name:"Jarra de Jugo",desc:"Jarra de jugo natural — consultar sabores",price:7,img:"",tags:[],available:true},
-    {id:124,cat:"bebidasfrias",name:"Ice Coffee",desc:"Café helado",price:2.5,img:"",tags:[],available:true},
-    {id:83,cat:"bebidasfrias",name:"Frappuccino",desc:"Café helado cremoso con crema batida",price:3,img:"",tags:[],available:true},
-    {id:84,cat:"bebidasfrias",name:"Milkshake",desc:"Batido cremoso — consultar sabores",price:4,img:"",tags:[],available:true},
+    {id:113,cat:"bebidasfrias",name:"Limonada Coco",desc:"Limonada con crema de coco",price:3,img:"",tags:[],available:false},
+    {id:116,cat:"bebidasfrias",name:"Maracuy√°",desc:"Jugo natural de maracuy√°",price:2.5,img:"",tags:[],available:true},
+    {id:118,cat:"bebidasfrias",name:"Jugo de Pi√±a",desc:"Jugo natural de pi√±a",price:2.5,img:"",tags:[],available:true},
+    {id:115,cat:"bebidasfrias",name:"Pi√±a Coco",desc:"Jugo de pi√±a con crema de coco",price:3,img:"",tags:[],available:true},
+    {id:117,cat:"bebidasfrias",name:"Jamaica Pi√±a",desc:"Jugo de jamaica con pi√±a",price:3,img:"",tags:[],available:true},
+    {id:128,cat:"bebidasfrias",name:"Jarra de Jugo",desc:"Jarra de jugo natural ‚Äî consultar sabores",price:7,img:"",tags:[],available:true},
+    {id:124,cat:"bebidasfrias",name:"Ice Coffee",desc:"Caf√© helado",price:2.5,img:"",tags:[],available:true},
+    {id:83,cat:"bebidasfrias",name:"Frappuccino",desc:"Caf√© helado cremoso con crema batida",price:3,img:"",tags:[],available:true},
+    {id:84,cat:"bebidasfrias",name:"Milkshake",desc:"Batido cremoso ‚Äî consultar sabores",price:4,img:"",tags:[],available:true},
     {id:119,cat:"bebidasfrias",name:"Coca Cola Personal",desc:"Sprite / original / Fanta / Inca Kola / Fiora",price:1,img:"",tags:[],available:true},
     {id:120,cat:"bebidasfrias",name:"Fuzetea",desc:"",price:1,img:"",tags:[],available:true},
     {id:121,cat:"bebidasfrias",name:"Agua Personal",desc:"",price:1,img:"",tags:[],available:true},
-    // BEBIDAS CALIENTES — Cafés, Chocolates
-    {id:122,cat:"bebidascalientes",name:"Café Americano",desc:"",price:1.5,img:"",tags:[],available:true},
-    {id:123,cat:"bebidascalientes",name:"Café Expreso",desc:"",price:1.5,img:"",tags:[],available:true},
-    {id:126,cat:"bebidascalientes",name:"Café Filtrado",desc:"",price:1,img:"",tags:[],available:true},
+    // BEBIDAS CALIENTES ‚Äî Caf√©s, Chocolates
+    {id:122,cat:"bebidascalientes",name:"Caf√© Americano",desc:"",price:1.5,img:"",tags:[],available:true},
+    {id:123,cat:"bebidascalientes",name:"Caf√© Expreso",desc:"",price:1,img:"",tags:[],available:true},
+    {id:126,cat:"bebidascalientes",name:"Caf√© Filtrado",desc:"",price:1,img:"",tags:[],available:true},
     {id:82,cat:"bebidascalientes",name:"Capuchino",desc:"Espresso con leche vaporizada y espuma cremosa",price:3,img:"",tags:[],available:true},
-    {id:125,cat:"bebidascalientes",name:"Chocolate Caliente",desc:"",price:2,img:"",tags:[],available:true},
+    {id:125,cat:"bebidascalientes",name:"Mocachino",desc:"",price:3,img:"",tags:[],available:true},
     {id:127,cat:"bebidascalientes",name:"Chocolate Tradicional",desc:"",price:2,img:"",tags:[],available:true},
     {id:85,cat:"bebidascalientes",name:"Chocolate Suizo",desc:"Chocolate premium caliente",price:2.5,img:"",tags:[],available:true},
     // POSTRES
-    {id:129,cat:"postres",name:"Postre del Día",desc:"Consulta con nuestro personal el postre especial de hoy",price:3.5,img:"",tags:["recomendado"],available:true},
+    {id:129,cat:"postres",name:"Postre del D√≠a",desc:"Consulta con nuestro personal el postre especial de hoy",price:3.5,img:"",tags:["recomendado"],available:true},
+    // JUEGOS
+    {id:310,cat:"cat_1775257872330",name:"Pide uno de nuestros juegos mientras esperas tu comida",desc:"BASTA - UNO- PARCHIS",price:0,img:"",tags:[],available:true},
   ],
-  imagesEnabled: true,
+  imagesEnabled: false,
   about: {
-    p1: "Paranoia RESTOBAR nace en el corazón de Piñas, El Oro, una ciudad rodeada de montañas, orquídeas y tradición. Somos un espacio donde la gastronomía se encuentra con la pasión por crear experiencias inolvidables.",
-    p2: "Nuestra cocina fusiona los sabores tradicionales ecuatorianos con técnicas de cocina internacional, utilizando ingredientes frescos y de la más alta calidad. Cada plato que servimos es una declaración de amor a la buena comida.",
-    p3: "Desde nuestros cortes premium a la parrilla hasta nuestros cócteles artesanales, te invitamos a vivir una experiencia gastronómica única con la calidez que solo Piñas puede ofrecer."
+    p1: "Paranoia RESTOBAR nace en el coraz√≥n de Pi√±as, El Oro, una ciudad rodeada de monta√±as, orqu√≠deas y tradici√≥n. Somos un espacio donde la gastronom√≠a se encuentra con la pasi√≥n por crear experiencias inolvidables.",
+    p2: "Nuestra cocina fusiona los sabores tradicionales ecuatorianos con t√©cnicas de cocina internacional, utilizando ingredientes frescos y de la m√°s alta calidad. Cada plato que servimos es una declaraci√≥n de amor a la buena comida.",
+    p3: "Desde nuestros cortes premium a la parrilla hasta nuestros c√≥cteles artesanales, te invitamos a vivir una experiencia gastron√≥mica √∫nica con la calidez que solo Pi√±as puede ofrecer."
   },
-  social: { instagram: "https://instagram.com/paranoia.restobar", facebook: "https://facebook.com/paranoia.restobar", whatsapp: "https://wa.me/593987654321" },
-  info: { phone: "098 765 4321", address: "Piñas, El Oro, Ecuador", hours: "Mar–Dom: 12:00 – 23:00", ig: "@paranoia.restobar" },
+  social: { instagram: "https://www.instagram.com/paranoia_restobar?igsh=Z211Nzh2enZyNDZ4&utm_source=qr", facebook: "https://www.facebook.com/share/197iuRmHBg/?mibextid=wwXIfr", whatsapp: "https://wa.link/hd422d" },
+  info: { phone: "099 213 4221", address: "Av Independencia - La susaya (Frente Hotel Arassari)", hours: "Lun a Jue 2pm:11pm--Vier a S√°b 12pm:12am--Dom 12pm: 10pm", ig: "@paranoia_restobar" },
   waitresses: [
     { id:1, name:"Mesera 1", img:"" },
     { id:2, name:"Mesera 2", img:"" },
@@ -217,7 +217,7 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Gar
 .particle{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;animation:particleFloat 8s ease-in-out infinite}
 .nav-sticky{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,10,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.1);transform:translateY(-100%);transition:transform .4s ease}.nav-sticky.visible{transform:translateY(0)}
 .cat-pill{padding:10px 20px;border-radius:30px;border:1px solid rgba(201,168,76,.2);background:transparent;color:var(--text-muted);cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:500;transition:all .35s;white-space:nowrap}.cat-pill:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(201,168,76,.06)}.cat-pill.active{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#0C0A08;border-color:var(--gold);font-weight:600;box-shadow:0 4px 24px rgba(201,168,76,.35),0 0 0 1px rgba(201,168,76,.15)}
-/* ── CARD V2 — PREMIUM LAYOUT ── */
+/* ‚îÄ‚îÄ CARD V2 ‚Äî PREMIUM LAYOUT ‚îÄ‚îÄ */
 .menu-card{position:relative;border-radius:20px;overflow:hidden;background:rgba(18,15,12,.85);backdrop-filter:blur(16px);border:1px solid rgba(201,168,76,.08);cursor:pointer;transition:all .5s cubic-bezier(.23,1,.32,1)}
 .menu-card:hover{transform:translateY(-8px) scale(1.015);border-color:rgba(201,168,76,.25);box-shadow:0 24px 64px rgba(0,0,0,.6),0 0 0 1px rgba(201,168,76,.08)}
 .menu-card:hover .card-img{transform:scale(1.1)}
@@ -312,11 +312,11 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Gar
 @keyframes catOrb3{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(calc(-50% + 20px),calc(-50% - 30px)) scale(1.05)}}
 .grain-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.55;border-radius:inherit;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");background-size:180px 180px;mix-blend-mode:overlay}
 .cat-glow-border{position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:24px;border:1px solid rgba(255,255,255,.04)}
-/* ── DECORACIONES DE SECCIÓN ── */
-/* Imagen de fondo por categoría - MÁS VISIBLE */
+/* ‚îÄ‚îÄ DECORACIONES DE SECCI√ìN ‚îÄ‚îÄ */
+/* Imagen de fondo por categor√≠a - M√ÅS VISIBLE */
 .cat-bg-image{position:absolute;inset:0;z-index:0;pointer-events:none;background-size:cover;background-position:center;opacity:.32;filter:brightness(.45) contrast(1.15) saturate(1.1);border-radius:inherit;transition:opacity 1.2s ease}
 .cat-bg-vignette{position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:inherit;background:radial-gradient(ellipse 80% 70% at 50% 30%,transparent 10%,rgba(12,10,8,.55) 50%,rgba(12,10,8,.92) 100%)}
-/* Línea luminosa superior animada */
+/* L√≠nea luminosa superior animada */
 .cat-shine-line{position:absolute;top:0;left:0;right:0;height:2px;z-index:5;pointer-events:none;overflow:hidden;border-radius:inherit}
 .cat-shine-line::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,currentColor,transparent);animation:shineSweep 4s ease-in-out infinite;opacity:.7}
 @keyframes shineSweep{0%{left:-60%}100%{left:160%}}
@@ -326,7 +326,7 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Gar
 /* Reflejo de luz sutil */
 .cat-light-reflect{position:absolute;top:-50%;left:-20%;width:60%;height:80%;z-index:1;pointer-events:none;border-radius:50%;opacity:.06;filter:blur(60px);animation:lightReflect 10s ease-in-out infinite}
 @keyframes lightReflect{0%,100%{transform:translate(0,0) scale(1);opacity:.06}50%{transform:translate(15%,10%) scale(1.1);opacity:.1}}
-/* Partículas flotantes premium */
+/* Part√≠culas flotantes premium */
 .cat-deco-particles{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;border-radius:inherit}
 .cat-particle{position:absolute;width:3px;height:3px;border-radius:50%;opacity:0;animation:particleFloat 8s ease-in-out infinite}
 .cat-particle:nth-child(odd){width:4px;height:4px}
@@ -338,7 +338,7 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Gar
 .cat-particle:nth-child(5){left:85%;top:80%;animation-delay:2s;animation-duration:10s}
 .cat-particle:nth-child(6){left:55%;top:15%;animation-delay:5s;animation-duration:7.5s}
 @keyframes particleFloat{0%{opacity:0;transform:translateY(0) scale(.5)}25%{opacity:.8}50%{opacity:.4;transform:translateY(-40px) scale(1.2)}75%{opacity:.6}100%{opacity:0;transform:translateY(-80px) scale(.5)}}
-/* ── EFECTO BRASAS / CHISPAS DE FUEGO ── */
+/* ‚îÄ‚îÄ EFECTO BRASAS / CHISPAS DE FUEGO ‚îÄ‚îÄ */
 .cat-embers{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;border-radius:inherit}
 .ember{position:absolute;border-radius:50%;opacity:0;animation:emberRise linear infinite}
 .ember:nth-child(1){left:10%;bottom:0;width:4px;height:4px;animation-duration:4s;animation-delay:0s}
@@ -350,14 +350,14 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Gar
 .ember:nth-child(7){left:60%;bottom:0;width:3px;height:3px;animation-duration:5.5s;animation-delay:2.5s}
 .ember:nth-child(8){left:15%;bottom:0;width:2px;height:2px;animation-duration:4s;animation-delay:3s}
 @keyframes emberRise{0%{opacity:0;transform:translateY(0) translateX(0) scale(1)}10%{opacity:.9}30%{opacity:.7;transform:translateY(-60px) translateX(15px) scale(.9)}60%{opacity:.4;transform:translateY(-150px) translateX(-10px) scale(.6)}100%{opacity:0;transform:translateY(-280px) translateX(20px) scale(.2)}}
-/* ── EFECTO HUMO ── */
+/* ‚îÄ‚îÄ EFECTO HUMO ‚îÄ‚îÄ */
 .cat-smoke{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;border-radius:inherit}
 .smoke-wisp{position:absolute;border-radius:50%;filter:blur(40px);opacity:0;animation:smokeRise 12s ease-in-out infinite}
 .smoke-wisp:nth-child(1){left:20%;bottom:-20%;width:120px;height:120px;animation-delay:0s}
 .smoke-wisp:nth-child(2){left:50%;bottom:-15%;width:100px;height:100px;animation-delay:4s}
 .smoke-wisp:nth-child(3){left:70%;bottom:-25%;width:80px;height:80px;animation-delay:8s}
 @keyframes smokeRise{0%{opacity:0;transform:translateY(0) scale(.7)}20%{opacity:.12}50%{opacity:.08;transform:translateY(-120px) scale(1.4) translateX(30px)}100%{opacity:0;transform:translateY(-250px) scale(2) translateX(-20px)}}
-/* ── BANNER HERO DE SECCIÓN ── */
+/* ‚îÄ‚îÄ BANNER HERO DE SECCI√ìN ‚îÄ‚îÄ */
 .cat-hero-banner{position:relative;width:calc(100% + 56px);margin:-32px -28px 28px;height:200px;overflow:hidden;border-radius:24px 24px 0 0}
 .cat-hero-banner img{width:100%;height:100%;object-fit:cover;filter:brightness(.5) saturate(1.15);transition:transform 8s ease}
 .cat-hero-banner:hover img{transform:scale(1.08)}
@@ -373,12 +373,12 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Gar
 .cat-corner-tr{top:12px;right:12px}.cat-corner-tr::before{top:0;right:0;width:36px;height:1.5px}.cat-corner-tr::after{top:0;right:0;width:1.5px;height:36px}
 .cat-corner-bl{bottom:12px;left:12px}.cat-corner-bl::before{bottom:0;left:0;width:36px;height:1.5px}.cat-corner-bl::after{bottom:0;left:0;width:1.5px;height:36px}
 .cat-corner-br{bottom:12px;right:12px}.cat-corner-br::before{bottom:0;right:0;width:36px;height:1.5px}.cat-corner-br::after{bottom:0;right:0;width:1.5px;height:36px}
-/* Línea ornamental bajo el header — ahora más premium */
+/* L√≠nea ornamental bajo el header ‚Äî ahora m√°s premium */
 .cat-ornament{display:flex;align-items:center;gap:10px;margin-bottom:28px;opacity:.5}
 .cat-ornament-line{flex:1;height:1px}
 .cat-ornament-diamond{width:10px;height:10px;transform:rotate(45deg);border:1.5px solid;flex-shrink:0}
 .cat-ornament-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;box-shadow:0 0 6px currentColor}
-/* ── SEPARADOR ENTRE ITEMS ── */
+/* ‚îÄ‚îÄ SEPARADOR ENTRE ITEMS ‚îÄ‚îÄ */
 .item-separator{height:1px;margin:0 auto;opacity:.15;background:linear-gradient(90deg,transparent 0%,currentColor 20%,currentColor 80%,transparent 100%);width:60%}
 .cat-section-wrap{position:relative;border-radius:24px;overflow:hidden;margin-bottom:40px;transition:all .6s cubic-bezier(.23,1,.32,1)}
 .cat-section-inner{position:relative;z-index:3;padding:32px 28px 36px}
@@ -407,7 +407,7 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Gar
 .page-flip-in-right{animation:flipInRight .38s cubic-bezier(0,0,.2,1) both;box-shadow:12px 0 40px rgba(0,0,0,.5)!important}
 .page-flip-out-left{animation:flipOutLeft .26s cubic-bezier(.4,0,1,1) both;box-shadow:12px 0 40px rgba(0,0,0,.6)!important}
 .page-flip-in-left{animation:flipInLeft .38s cubic-bezier(0,0,.2,1) both;box-shadow:-12px 0 40px rgba(0,0,0,.5)!important}
-/* ── CATEGORY BOTTOM SHEET ── */
+/* ‚îÄ‚îÄ CATEGORY BOTTOM SHEET ‚îÄ‚îÄ */
 .cat-sheet-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0);pointer-events:none;transition:background .35s ease}
 .cat-sheet-overlay.open{background:rgba(0,0,0,.65);pointer-events:all}
 .cat-sheet{position:fixed;bottom:0;left:0;right:0;z-index:201;background:linear-gradient(180deg,#161210 0%,#100e0c 100%);border-radius:24px 24px 0 0;border-top:1px solid rgba(201,168,76,.18);padding:0 0 calc(env(safe-area-inset-bottom,0px) + 80px);transform:translateY(100%);transition:transform .42s cubic-bezier(.23,1,.32,1);box-shadow:0 -20px 60px rgba(0,0,0,.6);max-height:75vh;display:flex;flex-direction:column}
@@ -421,7 +421,7 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Gar
 .cat-sheet-icon{font-size:26px;line-height:1}
 .cat-sheet-name{font-family:var(--sans);font-size:10px;font-weight:600;color:var(--text-muted);text-align:center;letter-spacing:.04em;line-height:1.2}
 .cat-sheet-btn.active .cat-sheet-name{color:var(--gold)}
-/* Botón selector en topbar móvil */
+/* Bot√≥n selector en topbar m√≥vil */
 .cat-nav-mobile{display:none;align-items:center;gap:0;flex:1;min-width:0}
 .cat-nav-arrow{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid rgba(201,168,76,.25);background:rgba(201,168,76,.08);color:var(--gold);font-size:14px;cursor:pointer;flex-shrink:0;transition:all .2s}.cat-nav-arrow:active{background:rgba(201,168,76,.25);transform:scale(.92)}
 .cat-nav-center{display:flex;align-items:center;justify-content:center;gap:8px;flex:1;min-width:0;border:none;background:none;cursor:pointer;padding:6px 8px;border-radius:10px;transition:background .2s}.cat-nav-center:active{background:rgba(201,168,76,.08)}
@@ -446,9 +446,9 @@ const Tag = ({label}) => <span className={`tag tag-${label}`}>{label}</span>;
 
 // Configuraciones de calidad de imagen
 const QUALITY_PRESETS = {
-  alta: { maxSize: 1600, quality: 0.92, label: '🔥 Alta', desc: 'Máxima calidad, archivo más grande' },
-  media: { maxSize: 1200, quality: 0.85, label: '⚡ Media', desc: 'Buen balance calidad/tamaño' },
-  baja: { maxSize: 600, quality: 0.7, label: '💨 Baja', desc: 'Carga rápida, menor calidad' },
+  alta: { maxSize: 1600, quality: 0.92, label: 'üî• Alta', desc: 'M√°xima calidad, archivo m√°s grande' },
+  media: { maxSize: 1200, quality: 0.85, label: '‚ö° Media', desc: 'Buen balance calidad/tama√±o' },
+  baja: { maxSize: 600, quality: 0.7, label: 'üí® Baja', desc: 'Carga r√°pida, menor calidad' },
 };
 
 const ImgUpload = ({value, onChange, label="Imagen", imgFit, imgPos, onFitChange, onPosChange}) => {
@@ -457,7 +457,7 @@ const ImgUpload = ({value, onChange, label="Imagen", imgFit, imgPos, onFitChange
   const [uploadMsg, setUploadMsg] = useState('');
   const [quality, setQuality] = useState('alta');
   
-  // Comprimir imagen según preset de calidad seleccionado
+  // Comprimir imagen seg√∫n preset de calidad seleccionado
   const compressImage = (file, preset) => new Promise((res) => {
     const reader = new FileReader();
     reader.onload = (e) => {
@@ -466,7 +466,7 @@ const ImgUpload = ({value, onChange, label="Imagen", imgFit, imgPos, onFitChange
         const canvas = document.createElement('canvas');
         const MAX = preset.maxSize;
         let w = img.width, h = img.height;
-        // Solo redimensionar si es más grande que el máximo
+        // Solo redimensionar si es m√°s grande que el m√°ximo
         if (w > MAX || h > MAX) {
           if (w > h) { if (w > MAX) { h = Math.round(h * MAX / w); w = MAX; } }
           else { if (h > MAX) { w = Math.round(w * MAX / h); h = MAX; } }
@@ -489,12 +489,12 @@ const ImgUpload = ({value, onChange, label="Imagen", imgFit, imgPos, onFitChange
     setUploading(true);
     const preset = QUALITY_PRESETS[quality];
     const sizeMB = (file.size / 1024 / 1024).toFixed(1);
-    setUploadMsg(`Procesando (${sizeMB}MB → calidad ${preset.label})...`);
+    setUploadMsg(`Procesando (${sizeMB}MB ‚Üí calidad ${preset.label})...`);
     try {
       const b64 = await compressImage(file, preset);
       const fname = 'paranoia_' + Date.now() + '.jpg';
       
-      // Mostrar tamaño resultante
+      // Mostrar tama√±o resultante
       const resultKB = Math.round((b64.length * 3/4) / 1024);
       setUploadMsg(`Subiendo a Drive (${resultKB}KB)...`);
       
@@ -513,14 +513,14 @@ const ImgUpload = ({value, onChange, label="Imagen", imgFit, imgPos, onFitChange
       
       if (json.status === 'success' && json.url) {
         onChange(json.url);
-        setUploadMsg(`✅ ¡Subida exitosa! (${resultKB}KB, ${preset.label})`);
+        setUploadMsg(`‚úÖ ¬°Subida exitosa! (${resultKB}KB, ${preset.label})`);
       } else {
         onChange(b64);
-        setUploadMsg('⚠️ Guardada localmente (alta calidad)');
+        setUploadMsg('‚ö†Ô∏è Guardada localmente (alta calidad)');
       }
     } catch(e) {
       try { const b64 = await compressImage(file, preset); onChange(b64); } catch(e2) {}
-      setUploadMsg('⚠️ Guardada localmente');
+      setUploadMsg('‚ö†Ô∏è Guardada localmente');
     }
     setUploading(false);
     setTimeout(() => setUploadMsg(''), 4000);
@@ -534,7 +534,7 @@ const ImgUpload = ({value, onChange, label="Imagen", imgFit, imgPos, onFitChange
       <label style={{fontSize:10,color:'var(--gold-dark)',textTransform:'uppercase',letterSpacing:'.1em'}}>{label}</label>
       <div style={{display:'flex',gap:6,alignItems:'center'}}>
         <input className="adm" value={typeof value==='string'&&!value.startsWith('data:')?value:''} onChange={e=>onChange(e.target.value)} placeholder="URL de imagen o sube archivo" style={{fontSize:11,flex:1}}/>
-        <button onClick={()=>fileRef.current?.click()} disabled={uploading} style={{padding:'8px 12px',borderRadius:8,border:'1px solid rgba(201,168,76,.2)',background:uploading?'rgba(201,168,76,.15)':'rgba(201,168,76,.06)',color:'var(--gold)',fontSize:11,cursor:uploading?'wait':'pointer',whiteSpace:'nowrap'}}>{uploading?'⏳ Subiendo...':'📁 Subir a Drive'}</button>
+        <button onClick={()=>fileRef.current?.click()} disabled={uploading} style={{padding:'8px 12px',borderRadius:8,border:'1px solid rgba(201,168,76,.2)',background:uploading?'rgba(201,168,76,.15)':'rgba(201,168,76,.06)',color:'var(--gold)',fontSize:11,cursor:uploading?'wait':'pointer',whiteSpace:'nowrap'}}>{uploading?'‚è≥ Subiendo...':'üìÅ Subir a Drive'}</button>
         <input ref={fileRef} type="file" accept="image/*" style={{display:'none'}} onChange={async e=>{const f=e.target.files?.[0];if(f)uploadToDrive(f);}}/>
       </div>
       {/* Selector de calidad */}
@@ -549,20 +549,20 @@ const ImgUpload = ({value, onChange, label="Imagen", imgFit, imgPos, onFitChange
             }}>{v.label}</button>
         ))}
       </div>
-      {uploadMsg&&<p style={{fontSize:10,color:uploadMsg.includes('✅')?'#66BB6A':uploadMsg.includes('⚠️')?'#FFB74D':'#42A5F5'}}>{uploadMsg}</p>}
+      {uploadMsg&&<p style={{fontSize:10,color:uploadMsg.includes('‚úÖ')?'#66BB6A':uploadMsg.includes('‚ö†Ô∏è')?'#FFB74D':'#42A5F5'}}>{uploadMsg}</p>}
       {value && <div style={{display:'flex',flexDirection:'column',gap:6}}>
         <div style={{display:'flex',gap:6,alignItems:'center'}}>
           <img src={value} alt="" style={{width:80,height:55,borderRadius:6,objectFit:imgFit||'cover',objectPosition:imgPos||'center',background:'#1a1512',border:'1px solid rgba(201,168,76,.15)'}}/>
-          <button onClick={()=>onChange('')} style={{padding:'4px 10px',borderRadius:6,border:'1px solid rgba(239,83,80,.3)',background:'rgba(239,83,80,.08)',color:'#EF5350',fontSize:10,cursor:'pointer'}}>🗑</button>
-          {typeof value==='string'&&value.startsWith('data:')&&<span style={{fontSize:9,color:'#FFB74D'}}>⚠️ Local</span>}
-          {typeof value==='string'&&value.includes('drive.google.com')&&<span style={{fontSize:9,color:'#66BB6A'}}>☁️ Drive</span>}
+          <button onClick={()=>onChange('')} style={{padding:'4px 10px',borderRadius:6,border:'1px solid rgba(239,83,80,.3)',background:'rgba(239,83,80,.08)',color:'#EF5350',fontSize:10,cursor:'pointer'}}>üóë</button>
+          {typeof value==='string'&&value.startsWith('data:')&&<span style={{fontSize:9,color:'#FFB74D'}}>‚ö†Ô∏è Local</span>}
+          {typeof value==='string'&&value.includes('drive.google.com')&&<span style={{fontSize:9,color:'#66BB6A'}}>‚òÅÔ∏è Drive</span>}
         </div>
         {onFitChange&&<div style={{display:'flex',gap:3,flexWrap:'wrap',alignItems:'center'}}>
           <span style={{fontSize:9,color:'var(--text-muted)'}}>Ajuste:</span>
           {fitOpts.map(f=><button key={f} onClick={()=>onFitChange(f)} style={{padding:'2px 7px',borderRadius:6,fontSize:9,border:'1px solid',cursor:'pointer',background:(imgFit||'cover')===f?'rgba(201,168,76,.15)':'transparent',color:(imgFit||'cover')===f?'var(--gold)':'var(--text-muted)',borderColor:(imgFit||'cover')===f?'var(--gold-dark)':'rgba(255,255,255,.1)'}}>{f==='cover'?'Llenar':f==='contain'?'Ajustar':'Estirar'}</button>)}
         </div>}
         {onPosChange&&<div style={{display:'flex',gap:3,flexWrap:'wrap',alignItems:'center'}}>
-          <span style={{fontSize:9,color:'var(--text-muted)'}}>Posición:</span>
+          <span style={{fontSize:9,color:'var(--text-muted)'}}>Posici√≥n:</span>
           {posOpts.map(p=><button key={p} onClick={()=>onPosChange(p)} style={{padding:'2px 6px',borderRadius:6,fontSize:8,border:'1px solid',cursor:'pointer',background:(imgPos||'center')===p?'rgba(201,168,76,.15)':'transparent',color:(imgPos||'center')===p?'var(--gold)':'var(--text-muted)',borderColor:(imgPos||'center')===p?'var(--gold-dark)':'rgba(255,255,255,.1)'}}>{{'center':'Centro','top':'Arriba','bottom':'Abajo','left':'Izq','right':'Der'}[p]}</button>)}
         </div>}
       </div>}
@@ -582,18 +582,18 @@ const MenuCard = ({item, onClick, delay=0, imagesEnabled=true, catColor='201,168
   const hasImg = imagesEnabled && item.img && item.img.length > 5;
   useEffect(()=>{setLd(false);setErr(false);},[item.img]);
   useEffect(()=>{const o=new IntersectionObserver(([e])=>{if(e.isIntersecting){setVis(true);o.disconnect();}},{threshold:.05});if(ref.current)o.observe(ref.current);return()=>o.disconnect();},[]);
-  const ico={entradas:'🥗',cocteles:'🍸',bebidas:'☕',bebidasfrias:'🥤',bebidascalientes:'☕',vinos:'🍷',postres:'🍰',mariscos:'🦞',pasta:'🍝',grill:'🔥',cortes:'🥩',rapidos:'🍔',especial:'⭐',cervezas:'🍺',acompanamientos:'🥗'};
+  const ico={entradas:'ü•ó',cocteles:'üç∏',bebidas:'‚òï',bebidasfrias:'ü•§',bebidascalientes:'‚òï',vinos:'üç∑',postres:'üç∞',mariscos:'ü¶û',pasta:'üçù',grill:'üî•',cortes:'ü•©',rapidos:'üçî',especial:'‚≠ê',cervezas:'üç∫',acompanamientos:'ü•ó'};
   const catLabels={entradas:'Entrada',cocteles:'Cocteleria',bebidasfrias:'Bebida',bebidascalientes:'Bebida',vinos:'Vinos',postres:'Postre',mariscos:'Del Mar',pasta:'Pasta',grill:'Grill',cortes:'Corte Premium',rapidos:'Rapido',especial:'Especial',cervezas:'Cerveza',acompanamientos:'Guarnicion'};
   const animStyle={opacity:vis?1:0,transform:vis?'none':'translateY(36px) scale(.97)',transition:`opacity .65s cubic-bezier(.23,1,.32,1) ${delay}s, transform .65s cubic-bezier(.23,1,.32,1) ${delay}s`,filter:item.available?'none':'grayscale(.5) opacity(.6)'};
   const priceStr=item.price?`$${item.price.toFixed(2)}`:'Consultar';
 
-  /* ── TEXT-ONLY MODE ── */
+  /* ‚îÄ‚îÄ TEXT-ONLY MODE ‚îÄ‚îÄ */
   if(!imagesEnabled){
     return(<div ref={ref} className="menu-card text-only-card" onClick={()=>item.available&&onClick(item)} style={{...animStyle,borderColor:hov?`rgba(${catColor},.3)`:'rgba(255,255,255,.06)',borderLeftColor:hov?`rgba(${catColor},.6)`:'transparent'}} onMouseOver={()=>setHov(true)} onMouseOut={()=>setHov(false)}>
       <div className="toc-wrap">
         <div className="toc-left">
           <div className="toc-header">
-            <span className="toc-cat">{ico[item.cat]||'🍽️'}</span>
+            <span className="toc-cat">{ico[item.cat]||'üçΩÔ∏è'}</span>
             {item.tags?.map(t=><Tag key={t} label={t}/>)}
             {!item.available&&<Tag label="agotado"/>}
           </div>
@@ -607,15 +607,15 @@ const MenuCard = ({item, onClick, delay=0, imagesEnabled=true, catColor='201,168
     </div>);
   }
 
-  /* ── IMAGE MODE — PREMIUM CARD V2 ── */
+  /* ‚îÄ‚îÄ IMAGE MODE ‚Äî PREMIUM CARD V2 ‚îÄ‚îÄ */
   return (<div ref={ref} className="menu-card" onClick={()=>item.available&&onClick(item)} onMouseOver={()=>setHov(true)} onMouseOut={()=>setHov(false)} style={{...animStyle,borderColor:hov?`rgba(${catColor},.25)`:`rgba(${catColor},.08)`,transition:`all .5s cubic-bezier(.23,1,.32,1) ${delay}s`}}>
 
-    {/* ── IMAGE SECTION ── */}
+    {/* ‚îÄ‚îÄ IMAGE SECTION ‚îÄ‚îÄ */}
     <div className="card-v2-img-wrap" style={{background:`linear-gradient(135deg,#1a1512,rgba(${catColor},.06))`}}>
       {hasImg&&!err&&<img src={item.img} alt={item.name} className="card-img" referrerPolicy="no-referrer" onLoad={()=>setLd(true)} onError={()=>setErr(true)} style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:item.imgFit||'cover',objectPosition:item.imgPos||'center',opacity:ld?1:0,transition:'opacity .6s ease, transform .8s cubic-bezier(.23,1,.32,1)',transform:hov?'scale(1.1)':'scale(1)'}}/>}
       {hasImg&&!ld&&!err&&<div className="card-v2-shimmer"/>}
       {(!hasImg||err)&&<div className="card-v2-placeholder" style={{color:`rgba(${catColor},1)`}}>
-        <span className="card-v2-placeholder-icon">{ico[item.cat]||'🍽️'}</span>
+        <span className="card-v2-placeholder-icon">{ico[item.cat]||'üçΩÔ∏è'}</span>
         <span className="card-v2-placeholder-text">Paranoia</span>
       </div>}
 
@@ -624,7 +624,7 @@ const MenuCard = ({item, onClick, delay=0, imagesEnabled=true, catColor='201,168
       {/* Bottom gradient overlay */}
       <div className="card-v2-img-overlay"/>
 
-      {/* Badges — top layer */}
+      {/* Badges ‚Äî top layer */}
       <div className="card-v2-badges">
         <div className="card-v2-badges-left">
           {item.tags?.map(t=><Tag key={t} label={t}/>)}
@@ -632,13 +632,13 @@ const MenuCard = ({item, onClick, delay=0, imagesEnabled=true, catColor='201,168
         {!item.available&&<Tag label="agotado"/>}
       </div>
 
-      {/* Floating price pill — bottom right of image */}
+      {/* Floating price pill ‚Äî bottom right of image */}
       <div className="card-v2-price-wrap">
         <span className="card-v2-price" style={{color:`rgba(${catColor},1)`,background:`rgba(12,10,8,.75)`,border:`1px solid rgba(${catColor},.3)`,boxShadow:`0 4px 20px rgba(0,0,0,.5),0 0 12px rgba(${catColor},.15)`}}>{priceStr}</span>
       </div>
     </div>
 
-    {/* ── BODY SECTION ── */}
+    {/* ‚îÄ‚îÄ BODY SECTION ‚îÄ‚îÄ */}
     <div className="card-v2-body" style={{background:`linear-gradient(180deg,rgba(${catColor},.04) 0%,transparent 100%)`}}>
       <h3 className="card-v2-title">{item.name}</h3>
       <p className="card-v2-desc">{item.desc}</p>
@@ -646,7 +646,7 @@ const MenuCard = ({item, onClick, delay=0, imagesEnabled=true, catColor='201,168
       {/* Footer: category label + CTA */}
       <div className="card-v2-footer">
         <span className="card-v2-cat-label" style={{color:`rgba(${catColor},.6)`}}>{catLabels[item.cat]||'Plato'}</span>
-        <span className="card-v2-cta" style={{color:`rgba(${catColor},1)`}}>Ver detalle →</span>
+        <span className="card-v2-cta" style={{color:`rgba(${catColor},1)`}}>Ver detalle ‚Üí</span>
       </div>
     </div>
   </div>);
@@ -655,12 +655,12 @@ const MenuCard = ({item, onClick, delay=0, imagesEnabled=true, catColor='201,168
 const DetailModal = ({item,onClose,imagesEnabled=true}) => {
   if(!item)return null;
   const hasImg = imagesEnabled && item.img && item.img.length > 5;
-  const ico={entradas:'🥗',cocteles:'🍸',bebidas:'☕',bebidasfrias:'🥤',bebidascalientes:'☕',vinos:'🍷',postres:'🍰',mariscos:'🦞',pasta:'🍝',grill:'🔥',cortes:'🥩',rapidos:'🍔',especial:'⭐',cervezas:'🍺'};
+  const ico={entradas:'ü•ó',cocteles:'üç∏',bebidas:'‚òï',bebidasfrias:'ü•§',bebidascalientes:'‚òï',vinos:'üç∑',postres:'üç∞',mariscos:'ü¶û',pasta:'üçù',grill:'üî•',cortes:'ü•©',rapidos:'üçî',especial:'‚≠ê',cervezas:'üç∫'};
   return(<div className="modal-overlay" onClick={onClose}><div className="modal-content" onClick={e=>e.stopPropagation()}>
   <div style={{position:'relative'}}>
     {hasImg?<img src={item.img} alt={item.name} referrerPolicy="no-referrer" style={{width:'100%',height:280,objectFit:item.imgFit||'cover',objectPosition:item.imgPos||'center',borderRadius:'20px 20px 0 0'}}/>
-    :<div style={{width:'100%',height:imagesEnabled?200:0,overflow:'hidden',borderRadius:'20px 20px 0 0',display:imagesEnabled?'flex':'none',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:8,background:'linear-gradient(135deg,#1a1410,#2a2018)'}}><span style={{fontSize:48,opacity:.4}}>{ico[item.cat]||'🍽️'}</span><span style={{fontSize:11,color:'var(--gold-dark)',letterSpacing:'.15em',textTransform:'uppercase'}}>Paranoia</span></div>}
-    <button onClick={onClose} style={{position:'absolute',top:14,right:14,width:36,height:36,borderRadius:'50%',border:'none',background:'rgba(0,0,0,.6)',color:'white',fontSize:18,cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center'}}>✕</button><div style={{position:'absolute',bottom:0,left:0,right:0,height:'40%',background:'linear-gradient(transparent,#161210)'}}/>{item.tags?.length>0&&<div style={{position:'absolute',bottom:16,left:20,display:'flex',gap:6}}>{item.tags.map(t=><Tag key={t} label={t}/>)}</div>}</div>
+    :<div style={{width:'100%',height:imagesEnabled?200:0,overflow:'hidden',borderRadius:'20px 20px 0 0',display:imagesEnabled?'flex':'none',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:8,background:'linear-gradient(135deg,#1a1410,#2a2018)'}}><span style={{fontSize:48,opacity:.4}}>{ico[item.cat]||'üçΩÔ∏è'}</span><span style={{fontSize:11,color:'var(--gold-dark)',letterSpacing:'.15em',textTransform:'uppercase'}}>Paranoia</span></div>}
+    <button onClick={onClose} style={{position:'absolute',top:14,right:14,width:36,height:36,borderRadius:'50%',border:'none',background:'rgba(0,0,0,.6)',color:'white',fontSize:18,cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center'}}>‚úï</button><div style={{position:'absolute',bottom:0,left:0,right:0,height:'40%',background:'linear-gradient(transparent,#161210)'}}/>{item.tags?.length>0&&<div style={{position:'absolute',bottom:16,left:20,display:'flex',gap:6}}>{item.tags.map(t=><Tag key={t} label={t}/>)}</div>}</div>
   <div style={{padding:'20px 24px 28px'}}><h2 style={{fontFamily:'var(--serif)',fontSize:28,fontWeight:600,marginBottom:8}}>{item.name}</h2><p style={{fontSize:14,color:'var(--text-muted)',lineHeight:1.7,marginBottom:20}}>{item.desc}</p><div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'16px 0',borderTop:'1px solid rgba(201,168,76,.1)'}}><span style={{fontFamily:'var(--serif)',fontSize:32,fontWeight:700,color:'var(--gold)'}}>{item.price?`$${item.price.toFixed(2)}`:'Consultar precio'}</span>{!item.available&&<Tag label="agotado"/>}</div></div>
 </div></div>);
 };
@@ -669,10 +669,10 @@ const LoginModal = ({onSuccess,onClose}) => {
   const [u,setU]=useState('');const [p,setP]=useState('');const [err,setErr]=useState('');const [sp,setSp]=useState(false);
   const go=()=>{if(u==='Paranoia'&&p==='Paranoia2026.ec')onSuccess();else{setErr('Credenciales incorrectas');setTimeout(()=>setErr(''),3000);}};
   return(<div className="modal-overlay" onClick={onClose}><div className="modal-content" onClick={e=>e.stopPropagation()} style={{maxWidth:400,padding:32}}>
-    <div style={{textAlign:'center',marginBottom:24}}><div style={{fontSize:32,marginBottom:8}}>🔒</div><h2 style={{fontFamily:'var(--serif)',fontSize:24,color:'var(--gold)',marginBottom:4}}>Acceso Admin</h2><p style={{fontSize:12,color:'var(--text-muted)'}}>Ingresa tus credenciales</p></div>
+    <div style={{textAlign:'center',marginBottom:24}}><div style={{fontSize:32,marginBottom:8}}>üîí</div><h2 style={{fontFamily:'var(--serif)',fontSize:24,color:'var(--gold)',marginBottom:4}}>Acceso Admin</h2><p style={{fontSize:12,color:'var(--text-muted)'}}>Ingresa tus credenciales</p></div>
     <div style={{display:'flex',flexDirection:'column',gap:12}}>
       <input className="adm" placeholder="Usuario" value={u} onChange={e=>setU(e.target.value)} onKeyDown={e=>e.key==='Enter'&&go()}/>
-      <div style={{position:'relative'}}><input className="adm" type={sp?'text':'password'} placeholder="Contraseña" value={p} onChange={e=>setP(e.target.value)} onKeyDown={e=>e.key==='Enter'&&go()}/><button onClick={()=>setSp(!sp)} style={{position:'absolute',right:12,top:'50%',transform:'translateY(-50%)',background:'none',border:'none',color:'var(--text-muted)',cursor:'pointer',fontSize:13}}>{sp?'🙈':'👁️'}</button></div>
+      <div style={{position:'relative'}}><input className="adm" type={sp?'text':'password'} placeholder="Contrase√±a" value={p} onChange={e=>setP(e.target.value)} onKeyDown={e=>e.key==='Enter'&&go()}/><button onClick={()=>setSp(!sp)} style={{position:'absolute',right:12,top:'50%',transform:'translateY(-50%)',background:'none',border:'none',color:'var(--text-muted)',cursor:'pointer',fontSize:13}}>{sp?'üôà':'üëÅÔ∏è'}</button></div>
       {err&&<p style={{color:'#EF5350',fontSize:12,textAlign:'center'}}>{err}</p>}
       <button className="btn-gold" onClick={go} style={{width:'100%',marginTop:8}}>Ingresar</button>
       <button onClick={onClose} style={{background:'none',border:'none',color:'var(--text-muted)',cursor:'pointer',fontSize:12,marginTop:4}}>Cancelar</button>
@@ -680,29 +680,29 @@ const LoginModal = ({onSuccess,onClose}) => {
   </div></div>);
 };
 
-// ─── ADMIN PANEL ───
+// ‚îÄ‚îÄ‚îÄ ADMIN PANEL ‚îÄ‚îÄ‚îÄ
 const AdminPanel = ({data,onSave,onClose,syncStatus,imagesEnabled=true,onToggleImages}) => {
   const [d,setD]=useState(JSON.parse(JSON.stringify(data)));
   const [tab,setTab]=useState('items');
   const up=(id,f,v)=>setD(p=>({...p,items:p.items.map(it=>it.id===id?{...it,[f]:v}:it)}));
-  const del=(id)=>{if(confirm('¿Eliminar?'))setD(p=>({...p,items:p.items.filter(it=>it.id!==id)}));};
-  const add=(c)=>{const nid=Math.max(...d.items.map(i=>i.id),0)+1;setD(p=>({...p,items:[...p.items,{id:nid,cat:c,name:'Nuevo Plato',desc:'Descripción',price:0,img:'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',tags:[],available:true}]}));};
+  const del=(id)=>{if(confirm('¬øEliminar?'))setD(p=>({...p,items:p.items.filter(it=>it.id!==id)}));};
+  const add=(c)=>{const nid=Math.max(...d.items.map(i=>i.id),0)+1;setD(p=>({...p,items:[...p.items,{id:nid,cat:c,name:'Nuevo Plato',desc:'Descripci√≥n',price:0,img:'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800',tags:[],available:true}]}));};
   const tog=(id,tag)=>setD(p=>({...p,items:p.items.map(it=>it.id!==id?it:{...it,tags:it.tags.includes(tag)?it.tags.filter(t=>t!==tag):[...it.tags,tag]})}));
   const upW=(i,f,v)=>{const w=[...d.waitresses];w[i]={...w[i],[f]:v};setD(p=>({...p,waitresses:w}));};
 
-  const tabs=[{k:'items',l:'🍽️ Platos'},{k:'categories',l:'📂 Categorías'},{k:'about',l:'📝 Nosotros'},{k:'social',l:'🔗 Redes'},{k:'waitresses',l:'👩‍🍳 Meseras'},{k:'info',l:'ℹ️ Info'},{k:'config',l:'⚙️ Config'}];
+  const tabs=[{k:'items',l:'üçΩÔ∏è Platos'},{k:'categories',l:'üìÇ Categor√≠as'},{k:'about',l:'üìù Nosotros'},{k:'social',l:'üîó Redes'},{k:'waitresses',l:'üë©‚Äçüç≥ Meseras'},{k:'info',l:'‚ÑπÔ∏è Info'},{k:'config',l:'‚öôÔ∏è Config'}];
 
   return(<div className="admin-panel"><div style={{maxWidth:800,margin:'0 auto',padding:'20px 16px'}}>
     {/* Header with Save/Discard */}
     <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:20,flexWrap:'wrap',gap:12}}>
-      <div><h2 style={{fontFamily:'var(--serif)',fontSize:26,color:'var(--gold)'}}>Panel Admin</h2><p style={{fontSize:12,color:'var(--text-muted)',marginTop:2}}>Edita tu menú — los cambios se sincronizan en la nube ☁️</p>
-        {syncStatus==='syncing'&&<p style={{fontSize:11,color:'#42A5F5',marginTop:4,animation:'fadeIn .3s'}}>⏳ Sincronizando con la nube...</p>}
-        {syncStatus==='saved'&&<p style={{fontSize:11,color:'#66BB6A',marginTop:4,animation:'fadeIn .3s'}}>✅ Menú guardado en la nube — visible para todos</p>}
-        {syncStatus==='error'&&<p style={{fontSize:11,color:'#EF5350',marginTop:4,animation:'fadeIn .3s'}}>⚠️ Error al sincronizar — guardado solo localmente</p>}
+      <div><h2 style={{fontFamily:'var(--serif)',fontSize:26,color:'var(--gold)'}}>Panel Admin</h2><p style={{fontSize:12,color:'var(--text-muted)',marginTop:2}}>Edita tu men√∫ ‚Äî los cambios se sincronizan en la nube ‚òÅÔ∏è</p>
+        {syncStatus==='syncing'&&<p style={{fontSize:11,color:'#42A5F5',marginTop:4,animation:'fadeIn .3s'}}>‚è≥ Sincronizando con la nube...</p>}
+        {syncStatus==='saved'&&<p style={{fontSize:11,color:'#66BB6A',marginTop:4,animation:'fadeIn .3s'}}>‚úÖ Men√∫ guardado en la nube ‚Äî visible para todos</p>}
+        {syncStatus==='error'&&<p style={{fontSize:11,color:'#EF5350',marginTop:4,animation:'fadeIn .3s'}}>‚ö†Ô∏è Error al sincronizar ‚Äî guardado solo localmente</p>}
       </div>
       <div style={{display:'flex',gap:8}}>
-        <button className="btn-gold" onClick={()=>onSave(d)} style={{fontSize:13,padding:'10px 28px'}}>{syncStatus==='syncing'?'⏳ Guardando...':'☁️ Guardar en la Nube'}</button>
-        <button className="btn-red" onClick={onClose} style={{fontSize:13,padding:'10px 20px'}}>✕ Descartar</button>
+        <button className="btn-gold" onClick={()=>onSave(d)} style={{fontSize:13,padding:'10px 28px'}}>{syncStatus==='syncing'?'‚è≥ Guardando...':'‚òÅÔ∏è Guardar en la Nube'}</button>
+        <button className="btn-red" onClick={onClose} style={{fontSize:13,padding:'10px 20px'}}>‚úï Descartar</button>
       </div>
     </div>
 
@@ -718,12 +718,12 @@ const AdminPanel = ({data,onSave,onClose,syncStatus,imagesEnabled=true,onToggleI
       </div>
       {ci.map(item=>(<div key={item.id} className="admin-card"><div style={{display:'flex',flexDirection:'column',gap:8}}>
         <div style={{display:'grid',gridTemplateColumns:'1fr 80px',gap:8}}><input className="adm" value={item.name} onChange={e=>up(item.id,'name',e.target.value)} placeholder="Nombre"/><input className="adm" type="number" value={item.price||''} onChange={e=>up(item.id,'price',e.target.value?parseFloat(e.target.value):null)} placeholder="$" style={{textAlign:'center'}}/></div>
-        <input className="adm" value={item.desc} onChange={e=>up(item.id,'desc',e.target.value)} placeholder="Descripción" style={{fontSize:12}}/>
+        <input className="adm" value={item.desc} onChange={e=>up(item.id,'desc',e.target.value)} placeholder="Descripci√≥n" style={{fontSize:12}}/>
         <ImgUpload value={item.img} onChange={v=>up(item.id,'img',v)} label="Foto del plato" imgFit={item.imgFit} imgPos={item.imgPos} onFitChange={v=>up(item.id,'imgFit',v)} onPosChange={v=>up(item.id,'imgPos',v)}/>
         <div style={{display:'flex',gap:6,flexWrap:'wrap',alignItems:'center'}}>
           {['popular','recomendado','nuevo','premium'].map(tag=><button key={tag} onClick={()=>tog(item.id,tag)} style={{padding:'3px 10px',borderRadius:14,fontSize:10,fontWeight:600,border:'1px solid',cursor:'pointer',textTransform:'uppercase',background:item.tags.includes(tag)?'rgba(201,168,76,.15)':'transparent',color:item.tags.includes(tag)?'var(--gold)':'var(--text-muted)',borderColor:item.tags.includes(tag)?'var(--gold-dark)':'rgba(255,255,255,.1)'}}>{tag}</button>)}
           <label style={{display:'flex',alignItems:'center',gap:6,fontSize:11,color:'var(--text-muted)',marginLeft:'auto',cursor:'pointer'}}><input type="checkbox" checked={item.available} onChange={e=>up(item.id,'available',e.target.checked)}/> Disp.</label>
-          <button onClick={()=>del(item.id)} style={{padding:'3px 10px',borderRadius:8,border:'1px solid rgba(239,83,80,.3)',background:'rgba(239,83,80,.08)',color:'#EF5350',fontSize:11,cursor:'pointer'}}>🗑</button>
+          <button onClick={()=>del(item.id)} style={{padding:'3px 10px',borderRadius:8,border:'1px solid rgba(239,83,80,.3)',background:'rgba(239,83,80,.08)',color:'#EF5350',fontSize:11,cursor:'pointer'}}>üóë</button>
         </div>
       </div></div>))}
     </div>);})}
@@ -731,24 +731,24 @@ const AdminPanel = ({data,onSave,onClose,syncStatus,imagesEnabled=true,onToggleI
     {/* CATEGORIES */}
     {tab==='categories'&&<div>
       {d.categories.map((cat,i)=><div key={cat.id} className="admin-card" style={{display:'grid',gridTemplateColumns:'50px 1fr auto 36px',gap:10,alignItems:'center'}}><input className="adm" value={cat.icon} onChange={e=>{const c=[...d.categories];c[i]={...c[i],icon:e.target.value};setD(p=>({...p,categories:c}));}} style={{textAlign:'center',fontSize:18}}/><input className="adm" value={cat.name} onChange={e=>{const c=[...d.categories];c[i]={...c[i],name:e.target.value};setD(p=>({...p,categories:c}));}}/><span style={{fontSize:12,color:'var(--text-muted)'}}>{d.items.filter(it=>it.cat===cat.id).length}</span>
-        <button onClick={()=>{if(confirm(`¿Eliminar categoría "${cat.name}"? Los platos de esta categoría quedarán sin categoría.`)){setD(p=>({...p,categories:p.categories.filter((_,idx)=>idx!==i)}));}}} style={{width:32,height:32,borderRadius:8,border:'1px solid rgba(239,83,80,.3)',background:'rgba(239,83,80,.08)',color:'#EF5350',fontSize:12,cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center'}}>🗑</button>
+        <button onClick={()=>{if(confirm(`¬øEliminar categor√≠a "${cat.name}"? Los platos de esta categor√≠a quedar√°n sin categor√≠a.`)){setD(p=>({...p,categories:p.categories.filter((_,idx)=>idx!==i)}));}}} style={{width:32,height:32,borderRadius:8,border:'1px solid rgba(239,83,80,.3)',background:'rgba(239,83,80,.08)',color:'#EF5350',fontSize:12,cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center'}}>üóë</button>
       </div>)}
-      <button onClick={()=>{const id='cat_'+Date.now();setD(p=>({...p,categories:[...p.categories,{id,name:'Nueva Categoría',icon:'🍽️'}]}));}} className="btn-outline" style={{width:'100%',marginTop:12,padding:'12px'}}>+ Agregar Categoría</button>
+      <button onClick={()=>{const id='cat_'+Date.now();setD(p=>({...p,categories:[...p.categories,{id,name:'Nueva Categor√≠a',icon:'üçΩÔ∏è'}]}));}} className="btn-outline" style={{width:'100%',marginTop:12,padding:'12px'}}>+ Agregar Categor√≠a</button>
     </div>}
 
     {/* ABOUT */}
     {tab==='about'&&<div style={{display:'flex',flexDirection:'column',gap:12}}>
-      <label style={{fontSize:11,color:'var(--gold)'}}>Párrafo 1</label>
+      <label style={{fontSize:11,color:'var(--gold)'}}>P√°rrafo 1</label>
       <textarea className="adm" value={d.about.p1} onChange={e=>setD(p=>({...p,about:{...p.about,p1:e.target.value}}))} rows={4} style={{resize:'vertical'}}/>
-      <label style={{fontSize:11,color:'var(--gold)'}}>Párrafo 2</label>
+      <label style={{fontSize:11,color:'var(--gold)'}}>P√°rrafo 2</label>
       <textarea className="adm" value={d.about.p2} onChange={e=>setD(p=>({...p,about:{...p.about,p2:e.target.value}}))} rows={4} style={{resize:'vertical'}}/>
-      <label style={{fontSize:11,color:'var(--gold)'}}>Párrafo 3</label>
+      <label style={{fontSize:11,color:'var(--gold)'}}>P√°rrafo 3</label>
       <textarea className="adm" value={d.about.p3} onChange={e=>setD(p=>({...p,about:{...p.about,p3:e.target.value}}))} rows={4} style={{resize:'vertical'}}/>
     </div>}
 
     {/* SOCIAL LINKS */}
     {tab==='social'&&<div style={{display:'flex',flexDirection:'column',gap:14}}>
-      {[{k:'instagram',l:'Instagram',ic:'📸'},{k:'facebook',l:'Facebook',ic:'👤'},{k:'whatsapp',l:'WhatsApp',ic:'💬'}].map(s=>(
+      {[{k:'instagram',l:'Instagram',ic:'üì∏'},{k:'facebook',l:'Facebook',ic:'üë§'},{k:'whatsapp',l:'WhatsApp',ic:'üí¨'}].map(s=>(
         <div key={s.k} className="admin-card" style={{display:'flex',gap:12,alignItems:'center'}}>
           <span style={{fontSize:24}}>{s.ic}</span>
           <div style={{flex:1}}><label style={{fontSize:10,color:'var(--gold-dark)',textTransform:'uppercase',letterSpacing:'.1em'}}>{s.l}</label>
@@ -759,15 +759,15 @@ const AdminPanel = ({data,onSave,onClose,syncStatus,imagesEnabled=true,onToggleI
 
     {/* WAITRESSES */}
     {tab==='waitresses'&&<div style={{display:'flex',flexDirection:'column',gap:12}}>
-      <p style={{fontSize:12,color:'var(--text-muted)',marginBottom:8}}>Edita las meseras que se muestran en la sección de calificación</p>
+      <p style={{fontSize:12,color:'var(--text-muted)',marginBottom:8}}>Edita las meseras que se muestran en la secci√≥n de calificaci√≥n</p>
       {d.waitresses.map((w,i)=>(<div key={w.id} className="admin-card">
         <div style={{display:'grid',gridTemplateColumns:'70px 1fr 36px',gap:14,alignItems:'start'}}>
-          {w.img ? <img src={w.img} alt="" style={{width:70,height:70,borderRadius:12,objectFit:'cover',background:'#1a1512'}}/> : <div style={{width:70,height:70,borderRadius:12,background:'#1a1512',display:'flex',alignItems:'center',justifyContent:'center',fontSize:28,border:'1px dashed rgba(201,168,76,.2)'}}>👩‍🍳</div>}
+          {w.img ? <img src={w.img} alt="" style={{width:70,height:70,borderRadius:12,objectFit:'cover',background:'#1a1512'}}/> : <div style={{width:70,height:70,borderRadius:12,background:'#1a1512',display:'flex',alignItems:'center',justifyContent:'center',fontSize:28,border:'1px dashed rgba(201,168,76,.2)'}}>üë©‚Äçüç≥</div>}
           <div style={{display:'flex',flexDirection:'column',gap:8}}>
             <input className="adm" value={w.name} onChange={e=>upW(i,'name',e.target.value)} placeholder="Nombre"/>
             <ImgUpload value={w.img} onChange={v=>upW(i,'img',v)} label="Foto"/>
           </div>
-          <button onClick={()=>{if(confirm(`¿Eliminar a ${w.name}?`)){setD(p=>({...p,waitresses:p.waitresses.filter((_,idx)=>idx!==i)}));}}} style={{width:32,height:32,borderRadius:8,border:'1px solid rgba(239,83,80,.3)',background:'rgba(239,83,80,.08)',color:'#EF5350',fontSize:12,cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',marginTop:4}}>🗑</button>
+          <button onClick={()=>{if(confirm(`¬øEliminar a ${w.name}?`)){setD(p=>({...p,waitresses:p.waitresses.filter((_,idx)=>idx!==i)}));}}} style={{width:32,height:32,borderRadius:8,border:'1px solid rgba(239,83,80,.3)',background:'rgba(239,83,80,.08)',color:'#EF5350',fontSize:12,cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',marginTop:4}}>üóë</button>
         </div>
       </div>))}
       <button onClick={()=>{const nid=Math.max(...d.waitresses.map(w=>w.id),0)+1;setD(p=>({...p,waitresses:[...p.waitresses,{id:nid,name:'Nueva Mesera',img:''}]}));}} className="btn-outline" style={{width:'100%',padding:'12px'}}>+ Agregar Mesera</button>
@@ -775,7 +775,7 @@ const AdminPanel = ({data,onSave,onClose,syncStatus,imagesEnabled=true,onToggleI
 
     {/* INFO */}
     {tab==='info'&&<div style={{display:'flex',flexDirection:'column',gap:12}}>
-      {[{k:'phone',l:'Teléfono'},{k:'address',l:'Dirección'},{k:'hours',l:'Horario'},{k:'ig',l:'Instagram @'}].map(f=>(
+      {[{k:'phone',l:'Tel√©fono'},{k:'address',l:'Direcci√≥n'},{k:'hours',l:'Horario'},{k:'ig',l:'Instagram @'}].map(f=>(
         <div key={f.k}><label style={{fontSize:10,color:'var(--gold-dark)',textTransform:'uppercase',letterSpacing:'.1em'}}>{f.l}</label>
         <input className="adm" value={d.info[f.k]} onChange={e=>setD(p=>({...p,info:{...p.info,[f.k]:e.target.value}}))} style={{marginTop:4}}/></div>
       ))}
@@ -784,12 +784,12 @@ const AdminPanel = ({data,onSave,onClose,syncStatus,imagesEnabled=true,onToggleI
     {/* CONFIG TAB */}
     {tab==='config'&&<div style={{display:'flex',flexDirection:'column',gap:20}}>
       <div className="admin-card">
-        <h3 style={{fontFamily:'var(--serif)',fontSize:18,color:'var(--gold)',marginBottom:4}}>🖼️ Imágenes del Menú</h3>
-        <p style={{fontSize:12,color:'var(--text-muted)',marginBottom:16}}>Activa o desactiva las fotos en todas las tarjetas del menú. Útil si aún no tienes fotos cargadas.</p>
+        <h3 style={{fontFamily:'var(--serif)',fontSize:18,color:'var(--gold)',marginBottom:4}}>üñºÔ∏è Im√°genes del Men√∫</h3>
+        <p style={{fontSize:12,color:'var(--text-muted)',marginBottom:16}}>Activa o desactiva las fotos en todas las tarjetas del men√∫. √ötil si a√∫n no tienes fotos cargadas.</p>
         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'14px 18px',borderRadius:12,background:'rgba(255,255,255,.03)',border:`1px solid ${imagesEnabled?'rgba(201,168,76,.25)':'rgba(255,255,255,.06)'}`}}>
           <div>
-            <p style={{fontSize:14,color:'var(--text)',fontWeight:600,marginBottom:2}}>{imagesEnabled?'Imágenes activadas':'Imágenes desactivadas'}</p>
-            <p style={{fontSize:11,color:'var(--text-muted)'}}>{imagesEnabled?'Las fotos se muestran en el menú':'Solo se muestra el nombre y descripción del plato'}</p>
+            <p style={{fontSize:14,color:'var(--text)',fontWeight:600,marginBottom:2}}>{imagesEnabled?'Im√°genes activadas':'Im√°genes desactivadas'}</p>
+            <p style={{fontSize:11,color:'var(--text-muted)'}}>{imagesEnabled?'Las fotos se muestran en el men√∫':'Solo se muestra el nombre y descripci√≥n del plato'}</p>
           </div>
           <div onClick={()=>onToggleImages(!imagesEnabled)} style={{width:52,height:28,borderRadius:14,background:imagesEnabled?'var(--gold)':'rgba(255,255,255,.1)',cursor:'pointer',position:'relative',transition:'background .3s',flexShrink:0,border:`1px solid ${imagesEnabled?'var(--gold-dark)':'rgba(255,255,255,.15)'}`}}>
             <div style={{position:'absolute',top:3,left:imagesEnabled?'calc(100% - 25px)':3,width:20,height:20,borderRadius:'50%',background:'white',transition:'left .3s',boxShadow:'0 1px 4px rgba(0,0,0,.4)'}}/>
@@ -797,10 +797,10 @@ const AdminPanel = ({data,onSave,onClose,syncStatus,imagesEnabled=true,onToggleI
         </div>
       </div>
       <div className="admin-card">
-        <h3 style={{fontFamily:'var(--serif)',fontSize:18,color:'var(--gold)',marginBottom:4}}>📋 Estado del Menú</h3>
-        <p style={{fontSize:12,color:'var(--text-muted)',marginBottom:12}}>Resumen rápido de tu menú actual.</p>
+        <h3 style={{fontFamily:'var(--serif)',fontSize:18,color:'var(--gold)',marginBottom:4}}>üìã Estado del Men√∫</h3>
+        <p style={{fontSize:12,color:'var(--text-muted)',marginBottom:12}}>Resumen r√°pido de tu men√∫ actual.</p>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(130px,1fr))',gap:12}}>
-          {[{label:'Total platos',val:d.items.length,icon:'🍽️'},{label:'Disponibles',val:d.items.filter(i=>i.available).length,icon:'✅'},{label:'Agotados',val:d.items.filter(i=>!i.available).length,icon:'❌'},{label:'Con foto',val:d.items.filter(i=>i.img&&i.img.length>5).length,icon:'📸'},{label:'Sin foto',val:d.items.filter(i=>!i.img||i.img.length<=5).length,icon:'⬜'},{label:'Categorías',val:d.categories.length,icon:'📂'}].map((s,i)=>(
+          {[{label:'Total platos',val:d.items.length,icon:'üçΩÔ∏è'},{label:'Disponibles',val:d.items.filter(i=>i.available).length,icon:'‚úÖ'},{label:'Agotados',val:d.items.filter(i=>!i.available).length,icon:'‚ùå'},{label:'Con foto',val:d.items.filter(i=>i.img&&i.img.length>5).length,icon:'üì∏'},{label:'Sin foto',val:d.items.filter(i=>!i.img||i.img.length<=5).length,icon:'‚¨ú'},{label:'Categor√≠as',val:d.categories.length,icon:'üìÇ'}].map((s,i)=>(
             <div key={i} style={{textAlign:'center',padding:'14px 10px',borderRadius:10,background:'rgba(255,255,255,.03)',border:'1px solid rgba(201,168,76,.08)'}}>
               <div style={{fontSize:22,marginBottom:4}}>{s.icon}</div>
               <div style={{fontFamily:'var(--serif)',fontSize:24,fontWeight:700,color:'var(--gold)'}}>{s.val}</div>
@@ -813,13 +813,13 @@ const AdminPanel = ({data,onSave,onClose,syncStatus,imagesEnabled=true,onToggleI
 
     {/* Bottom save bar */}
     <div style={{position:'sticky',bottom:0,background:'rgba(12,10,8,.95)',backdropFilter:'blur(10px)',padding:'16px 0',marginTop:20,display:'flex',gap:8,justifyContent:'center',borderTop:'1px solid rgba(201,168,76,.1)'}}>
-      <button className="btn-gold" onClick={()=>onSave(d)} style={{fontSize:14,padding:'12px 40px'}}>{syncStatus==='syncing'?'⏳ Sincronizando...':'☁️ Guardar y Sincronizar'}</button>
+      <button className="btn-gold" onClick={()=>onSave(d)} style={{fontSize:14,padding:'12px 40px'}}>{syncStatus==='syncing'?'‚è≥ Sincronizando...':'‚òÅÔ∏è Guardar y Sincronizar'}</button>
       <button className="btn-red" onClick={onClose} style={{fontSize:13}}>Descartar</button>
     </div>
   </div></div>);
 };
 
-// ─── RATING ───
+// ‚îÄ‚îÄ‚îÄ RATING ‚îÄ‚îÄ‚îÄ
 
 const StarInput = ({value, onSelect, label}) => {
   const [hov,setHov]=useState(0);
@@ -831,7 +831,7 @@ const StarInput = ({value, onSelect, label}) => {
           onMouseEnter={()=>setHov(s)} onMouseLeave={()=>setHov(0)}
           onClick={()=>onSelect(s)}
           style={{fontSize:28,cursor:'pointer',display:'inline-block',lineHeight:1,userSelect:'none',WebkitTapHighlightColor:'transparent',transition:'transform .15s',transform:s<=(hov||value)?'scale(1.1)':'scale(1)'}}
-        >{s<=(hov||value)?'⭐':'☆'}</span>
+        >{s<=(hov||value)?'‚≠ê':'‚òÜ'}</span>
       ))}
     </div>
     {value>0&&<p style={{fontSize:10,color:'var(--gold)',marginTop:4}}>{value}/5</p>}
@@ -856,7 +856,7 @@ const RatingSection = ({waitresses}) => {
   const handleSubmit=()=>{
     if(!canSubmit)return;
     setSending(true);
-    const rev={name:name||'Anónimo',food,service,ambience,waitress,comment,date:new Date().toLocaleDateString('es-EC')};
+    const rev={name:name||'An√≥nimo',food,service,ambience,waitress,comment,date:new Date().toLocaleDateString('es-EC')};
     const up=[rev,...reviews].slice(0,30);
     setReviews(up);
     try{localStorage.setItem('paranoia-reviews',JSON.stringify(up));}catch(e){}
@@ -864,7 +864,7 @@ const RatingSection = ({waitresses}) => {
     try{
       const params=new URLSearchParams({
         action:'submit',
-        nombre:name||'Anónimo',
+        nombre:name||'An√≥nimo',
         comida:String(food),
         servicio:String(service),
         ambiente:String(ambience),
@@ -884,14 +884,14 @@ const RatingSection = ({waitresses}) => {
     },800);
   };
   
-  const avg=(field)=>{const r=reviews.filter(x=>x[field]);return r.length?(r.reduce((s,x)=>s+(x[field]||0),0)/r.length).toFixed(1):'—';};
+  const avg=(field)=>{const r=reviews.filter(x=>x[field]);return r.length?(r.reduce((s,x)=>s+(x[field]||0),0)/r.length).toFixed(1):'‚Äî';};
 
   return(<div>
     <div style={{background:'var(--bg-card)',border:'1px solid rgba(201,168,76,.1)',borderRadius:16,padding:'28px 24px',maxWidth:600,margin:'0 auto'}}>
-      {submitted?(<div style={{textAlign:'center',animation:'scaleIn .4s',padding:20}}><div style={{fontSize:48,marginBottom:12}}>🙏</div><h3 style={{fontFamily:'var(--serif)',fontSize:22,color:'var(--gold)',marginBottom:8}}>¡Gracias por tu opinión!</h3><p style={{fontSize:13,color:'var(--text-muted)'}}>Tu encuesta fue enviada a nuestra base de datos</p></div>):(<>
+      {submitted?(<div style={{textAlign:'center',animation:'scaleIn .4s',padding:20}}><div style={{fontSize:48,marginBottom:12}}>üôè</div><h3 style={{fontFamily:'var(--serif)',fontSize:22,color:'var(--gold)',marginBottom:8}}>¬°Gracias por tu opini√≥n!</h3><p style={{fontSize:13,color:'var(--text-muted)'}}>Tu encuesta fue enviada a nuestra base de datos</p></div>):(<>
         {/* Waitress selection */}
         {waitresses?.length>0&&<div style={{marginBottom:20}}>
-          <p style={{fontSize:12,color:'var(--text-muted)',marginBottom:10,textAlign:'center'}}>¿Quién te atendió?</p>
+          <p style={{fontSize:12,color:'var(--text-muted)',marginBottom:10,textAlign:'center'}}>¬øQui√©n te atendi√≥?</p>
           <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap'}}>
             {waitresses.map(w=>(<div key={w.id} onClick={()=>setWaitress(w.name)} style={{cursor:'pointer',textAlign:'center',padding:8,borderRadius:12,border:`2px solid ${waitress===w.name?'var(--gold)':'rgba(201,168,76,.1)'}`,background:waitress===w.name?'rgba(201,168,76,.06)':'transparent',transition:'all .3s',minWidth:70}}>
               <img src={w.img} alt={w.name} style={{width:50,height:50,borderRadius:'50%',objectFit:'cover',marginBottom:6,border:waitress===w.name?'2px solid var(--gold)':'2px solid transparent'}}/>
@@ -901,16 +901,16 @@ const RatingSection = ({waitresses}) => {
         </div>}
         {/* Ratings */}
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:16,marginBottom:20}}>
-          <StarInput value={food} onSelect={setFood} label="🍽️ Comida"/>
-          <StarInput value={service} onSelect={setService} label="👩‍🍳 Servicio"/>
-          <StarInput value={ambience} onSelect={setAmbience} label="✨ Ambiente"/>
+          <StarInput value={food} onSelect={setFood} label="üçΩÔ∏è Comida"/>
+          <StarInput value={service} onSelect={setService} label="üë©‚Äçüç≥ Servicio"/>
+          <StarInput value={ambience} onSelect={setAmbience} label="‚ú® Ambiente"/>
         </div>
         <div style={{display:'flex',flexDirection:'column',gap:10}}>
           <input className="adm" placeholder="Tu nombre (opcional)" value={name} onChange={e=>setName(e.target.value)}/>
-          <textarea className="adm" placeholder="Cuéntanos tu experiencia..." value={comment} onChange={e=>setComment(e.target.value)} rows={3} style={{resize:'vertical'}}/>
-          <div role="button" onClick={handleSubmit} style={{width:'100%',padding:'14px 32px',borderRadius:30,border:'none',background:canSubmit?'linear-gradient(135deg,#C9A84C,#8A7235)':'rgba(201,168,76,.2)',color:canSubmit?'#0C0A08':'#8A8478',fontFamily:'var(--sans)',fontSize:15,fontWeight:700,cursor:canSubmit?'pointer':'default',transition:'all .3s',textAlign:'center',boxShadow:canSubmit?'0 8px 30px rgba(201,168,76,.3)':'none',letterSpacing:'.02em'}}>{sending?'⏳ Enviando...':'⭐ Enviar Calificación'}</div>
+          <textarea className="adm" placeholder="Cu√©ntanos tu experiencia..." value={comment} onChange={e=>setComment(e.target.value)} rows={3} style={{resize:'vertical'}}/>
+          <div role="button" onClick={handleSubmit} style={{width:'100%',padding:'14px 32px',borderRadius:30,border:'none',background:canSubmit?'linear-gradient(135deg,#C9A84C,#8A7235)':'rgba(201,168,76,.2)',color:canSubmit?'#0C0A08':'#8A8478',fontFamily:'var(--sans)',fontSize:15,fontWeight:700,cursor:canSubmit?'pointer':'default',transition:'all .3s',textAlign:'center',boxShadow:canSubmit?'0 8px 30px rgba(201,168,76,.3)':'none',letterSpacing:'.02em'}}>{sending?'‚è≥ Enviando...':'‚≠ê Enviar Calificaci√≥n'}</div>
           {food===0&&<p style={{fontSize:11,color:'var(--text-muted)',textAlign:'center'}}>Califica al menos la comida para enviar</p>}
-          <p style={{fontSize:10,color:'var(--gold-dark)',textAlign:'center',marginTop:2,letterSpacing:'.05em'}}>🔗 Conectado a base de datos en la nube</p>
+          <p style={{fontSize:10,color:'var(--gold-dark)',textAlign:'center',marginTop:2,letterSpacing:'.05em'}}>üîó Conectado a base de datos en la nube</p>
         </div>
       </>)}
     </div>
@@ -924,7 +924,7 @@ const RatingSection = ({waitresses}) => {
         {reviews.slice(0,5).map((r,i)=>(<div key={i} style={{background:'rgba(255,255,255,.02)',border:'1px solid rgba(201,168,76,.06)',borderRadius:12,padding:'12px 16px'}}>
           <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:4}}><span style={{fontWeight:600,fontSize:13}}>{r.name}</span><span style={{fontSize:10,color:'var(--text-muted)'}}>{r.date}</span></div>
           <div style={{display:'flex',gap:12,fontSize:11,color:'var(--text-muted)',marginBottom:4}}>
-            {r.food&&<span>Comida {'⭐'.repeat(r.food)}</span>}{r.service&&<span>Servicio {'⭐'.repeat(r.service)}</span>}{r.ambience&&<span>Ambiente {'⭐'.repeat(r.ambience)}</span>}
+            {r.food&&<span>Comida {'‚≠ê'.repeat(r.food)}</span>}{r.service&&<span>Servicio {'‚≠ê'.repeat(r.service)}</span>}{r.ambience&&<span>Ambiente {'‚≠ê'.repeat(r.ambience)}</span>}
           </div>
           {r.waitress&&<p style={{fontSize:11,color:'var(--gold-dark)'}}>Atendido por: {r.waitress}</p>}
           {r.comment&&<p style={{fontSize:12,color:'var(--text-muted)',lineHeight:1.5,marginTop:4}}>{r.comment}</p>}
@@ -948,7 +948,7 @@ const SocialIcons = ({social}) => (
   </div>
 );
 
-// ═══ MAIN ═══
+// ‚ïê‚ïê‚ïê MAIN ‚ïê‚ïê‚ïê
 function App() {
   const [data,setData]=useState(D);
   const [activeCat,setActiveCat]=useState('especial');
@@ -970,23 +970,30 @@ function App() {
   const [syncStatus,setSyncStatus]=useState('');
 
   useEffect(()=>{
-    // Intentar cargar menú desde la nube (Google Sheets)
+    // Intentar cargar men√∫ desde la nube (Google Sheets)
     const loadCloud=async()=>{
+      // 1. Cargar cach√© local primero (respuesta instant√°nea para el usuario)
+      let cachedData=null;
+      try{
+        const raw=localStorage.getItem('paranoia-menu-v3');
+        if(raw){cachedData=JSON.parse(raw);setData(cachedData);setMenuLoading(false);}
+      }catch(e){}
+
+      // 2. Luego actualizar desde la nube (en segundo plano)
       try{
         const ctrl=new AbortController();
-        const timeout=setTimeout(()=>ctrl.abort(),6000);
-        const r=await fetch(GOOGLE_SCRIPT_URL+'?action=load_menu',{signal:ctrl.signal,redirect:'follow'});
+        const timeout=setTimeout(()=>ctrl.abort(),15000);
+        const r=await fetch(GOOGLE_SCRIPT_URL+'?action=load_menu&t='+Date.now(),{signal:ctrl.signal,redirect:'follow',cache:'no-store'});
         clearTimeout(timeout);
         const json=await r.json();
         if(json.status==='success'&&json.data){
-          // Solo usar nube si tiene versión actual o superior
           const cloudVer=json.data.menuVersion||0;
           if(cloudVer>=MENU_VERSION){
             setData(json.data);
-            try{localStorage.setItem('paranoia-menu-v3',JSON.stringify(json.data));localStorage.setItem('paranoia-menu-version',String(MENU_VERSION));}catch(e){}
+            try{localStorage.setItem('paranoia-menu-v3',JSON.stringify(json.data));localStorage.setItem('paranoia-menu-version',String(cloudVer));}catch(e){}
           }else{
-            // Nube vieja → usar datos hardcodeados D y SUBIR a la nube
-            setData(D);
+            // Nube vieja ‚Üí usar datos hardcodeados D y SUBIR a la nube
+            if(!cachedData){setData(D);}
             const pushData={...D,menuVersion:MENU_VERSION,savedAt:Date.now()};
             try{fetch(GOOGLE_SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify({action:'save_menu',menuData:pushData})});}catch(e){}
           }
@@ -994,9 +1001,8 @@ function App() {
           return;
         }
       }catch(e){}
-      // Fallback: siempre usar datos hardcodeados D (fuente de verdad local)
-      try{localStorage.removeItem('paranoia-menu-v3');localStorage.setItem('paranoia-menu-version',String(MENU_VERSION));}catch(e){}
-      setData(D);
+      // Fallback: usar cach√© si existe, si no usar D (nunca borrar el cach√©)
+      if(!cachedData){setData(D);}
       setMenuLoading(false);
     };
     loadCloud();
@@ -1019,7 +1025,7 @@ function App() {
     try{
       await fetch(GOOGLE_SCRIPT_URL,{method:'POST',mode:'no-cors',body:JSON.stringify({action:'save_menu',menuData:cloudData})});
       await new Promise(r=>setTimeout(r,3000));
-      const check=await fetch(GOOGLE_SCRIPT_URL+'?action=load_menu',{redirect:'follow'});
+      const check=await fetch(GOOGLE_SCRIPT_URL+'?action=load_menu&t='+Date.now(),{redirect:'follow',cache:'no-store'});
       const json=await check.json();
       setSyncStatus(json.status==='success'?'saved':'error');
     }catch(e){
@@ -1079,7 +1085,7 @@ function App() {
     {/* MAIN VIEW WRAPPER */}
     <div className="view-wrap">
 
-      {/* ═══ HERO VIEW ═══ */}
+      {/* ‚ïê‚ïê‚ïê HERO VIEW ‚ïê‚ïê‚ïê */}
       <div className={`view-panel ${view==='hero'?'view-active':'view-hidden'}`} style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
         <div style={{position:'absolute',inset:0,zIndex:0,overflow:'hidden',pointerEvents:'none'}}>
           <video autoPlay muted loop playsInline preload="auto" style={{position:'absolute',top:'50%',left:'50%',minWidth:'120%',minHeight:'120%',width:'auto',height:'auto',transform:'translate(-50%,-50%)',opacity:.32,objectFit:'cover',filter:'brightness(.65) saturate(1.3) contrast(1.1)'}}>
@@ -1109,8 +1115,8 @@ function App() {
           <h1 onClick={handleTap} className="paranoia-logo hero-title" style={{marginBottom:6}}><span className="logo-p">P</span>aranoia</h1>
           <p className="logo-restobar hero-sub" style={{marginBottom:28}}>RESTOBAR</p>
           <p className="hero-tagline gold-shimmer-text" style={{fontFamily:'var(--serif)',fontSize:'clamp(15px,2.8vw,21px)',fontStyle:'italic',marginBottom:36,display:'inline-block'}}>Donde cada plato cuenta una historia</p>
-          <button className="btn-gold hero-btn1" onClick={goMenu} style={{fontSize:15,padding:'14px 48px',marginBottom:14,boxShadow:'0 8px 32px rgba(201,168,76,.3)'}}>Explorar Menú</button>
-          <button className="btn-outline hero-btn2" onClick={goRating} style={{fontSize:13,padding:'12px 32px',marginBottom:28}}>⭐ Calificar Restaurante</button>
+          <button className="btn-gold hero-btn1" onClick={goMenu} style={{fontSize:15,padding:'14px 48px',marginBottom:14,boxShadow:'0 8px 32px rgba(201,168,76,.3)'}}>Explorar Men√∫</button>
+          <button className="btn-outline hero-btn2" onClick={goRating} style={{fontSize:13,padding:'12px 32px',marginBottom:28}}>‚≠ê Calificar Restaurante</button>
           <div className="hero-social"><SocialIcons social={data.social}/></div>
         </div>
         <div style={{position:'absolute',bottom:28,left:'50%',transform:'translateX(-50%)',zIndex:3,opacity:.45,animation:'float 3s ease-in-out infinite'}}>
@@ -1120,9 +1126,9 @@ function App() {
         </div>
       </div>
 
-      {/* ═══ MENU VIEW ═══ */}
+      {/* ‚ïê‚ïê‚ïê MENU VIEW ‚ïê‚ïê‚ïê */}
       <div className={`view-panel mesh-bg ${view==='menu'?'view-active':'view-hidden'}`} style={{display:'flex',flexDirection:'column'}}>
-        {/* Top bar — 1 fila desktop / 2 filas móvil */}
+        {/* Top bar ‚Äî 1 fila desktop / 2 filas m√≥vil */}
         <div className="menu-topbar" ref={topbarRef}>
           <button className="menu-topbar-logo" onClick={goHero}>
             <img src={ISOTIPO_B64} alt="" style={{width:22,height:22,objectFit:'contain',opacity:.85}}/>
@@ -1138,28 +1144,28 @@ function App() {
               })}
             </div>
           </div>
-          {/* Móvil: navegador con flechas */}
+          {/* M√≥vil: navegador con flechas */}
           {(()=>{const cats=data.categories.filter(c=>data.items.some(i=>i.cat===c.id));const curIdx=cats.findIndex(c=>c.id===activeCat);const ac=cats[curIdx]||cats[0];const prev=cats[(curIdx-1+cats.length)%cats.length];const next=cats[(curIdx+1)%cats.length];return(
             <div className="cat-nav-mobile">
-              <button className="cat-nav-arrow" onClick={()=>scrollTo(prev.id)}>◀</button>
+              <button className="cat-nav-arrow" onClick={()=>scrollTo(prev.id)}>‚óÄ</button>
               <button className="cat-nav-center" onClick={()=>setSheetOpen(true)}>
                 <span className="cat-nav-icon">{ac.icon}</span>
                 <span className="cat-nav-name">{ac.name}</span>
-                <span className="cat-nav-grid-icon">⋮⋮</span>
+                <span className="cat-nav-grid-icon">‚ãÆ‚ãÆ</span>
               </button>
-              <button className="cat-nav-arrow" onClick={()=>scrollTo(next.id)}>▶</button>
+              <button className="cat-nav-arrow" onClick={()=>scrollTo(next.id)}>‚ñ∂</button>
             </div>
           );})()}
           <div className="menu-actions">
             <button className="btn-outline" onClick={goAbout} style={{fontSize:11,padding:'7px 14px',whiteSpace:'nowrap'}}>Nosotros</button>
-            <button className="btn-outline" onClick={goRating} style={{fontSize:11,padding:'7px 14px',whiteSpace:'nowrap'}}>⭐</button>
+            <button className="btn-outline" onClick={goRating} style={{fontSize:11,padding:'7px 14px',whiteSpace:'nowrap'}}>‚≠ê</button>
           </div>
         </div>
-        {/* BOTTOM SHEET de categorías (solo móvil) */}
+        {/* BOTTOM SHEET de categor√≠as (solo m√≥vil) */}
         <div className={`cat-sheet-overlay ${sheetOpen?'open':''}`} onClick={()=>setSheetOpen(false)}/>
         <div className={`cat-sheet ${sheetOpen?'open':''}`}>
           <div className="cat-sheet-handle"/>
-          <div className="cat-sheet-title">Selecciona una categoría</div>
+          <div className="cat-sheet-title">Selecciona una categor√≠a</div>
           <div className="cat-sheet-grid">
             {data.categories.map(cat=>{
               const n=data.items.filter(i=>i.cat===cat.id).length;
@@ -1180,9 +1186,9 @@ function App() {
             {data.categories.map(cat=>{const items=data.items.filter(i=>i.cat===cat.id);if(!items.length)return null;const th=CAT_THEMES[cat.id]||CAT_THEMES.especial;const active=activeCat===cat.id;return(
               <section key={cat.id} id={`s-${cat.id}`} style={{display:active?'block':'none',animation:'sectionIn .55s cubic-bezier(.23,1,.32,1)'}}>
                 <div className={`cat-section-wrap ${flipState==='out'?(flipDir==='right'?'page-flip-out-right':'page-flip-out-left'):flipState==='in'?(flipDir==='right'?'page-flip-in-right':'page-flip-in-left'):''}`} style={{transformStyle:'preserve-3d'}}>
-                  {/* Fondo degradado por categoría */}
+                  {/* Fondo degradado por categor√≠a */}
                   <div className="cat-section-bg" style={{background:`radial-gradient(ellipse 90% 60% at 15% 20%,rgba(${th.c1},.13) 0%,transparent 55%),radial-gradient(ellipse 70% 50% at 85% 80%,rgba(${th.c2},.1) 0%,transparent 50%),radial-gradient(ellipse 50% 70% at 50% 50%,rgba(${th.c1},.05) 0%,transparent 60%),linear-gradient(160deg,rgba(${th.c1},.07) 0%,rgba(12,10,8,.0) 40%,rgba(${th.c2},.06) 100%)`}}/>
-                  {/* Fondo imagen temática */}
+                  {/* Fondo imagen tem√°tica */}
                   <div className="cat-bg-image" style={{backgroundImage:`url(${CAT_IMAGES[cat.id]||''})`}}/>
                   <div className="cat-bg-vignette"/>
                   {/* Esquinas decoradas */}
@@ -1194,7 +1200,7 @@ function App() {
                   <div className="cat-glow-border" style={{borderColor:`rgba(${th.c1},.14)`}}/>
                   {/* Contenido */}
                   <div className="cat-section-inner">
-                    {/* ── BANNER HERO DE SECCIÓN ── */}
+                    {/* ‚îÄ‚îÄ BANNER HERO DE SECCI√ìN ‚îÄ‚îÄ */}
                     <div className="cat-hero-banner">
                       <img src={CAT_IMAGES[cat.id]||''} alt={cat.name} loading="lazy"/>
                       <div className="cat-hero-overlay"/>
@@ -1213,7 +1219,7 @@ function App() {
                       <div className="cat-ornament-dot" style={{background:`rgba(${th.c1},.5)`}}/>
                     </div>
                     <div style={{display:'grid',gridTemplateColumns:imagesEnabled?'repeat(auto-fill,minmax(280px,1fr))':'1fr',gap:imagesEnabled?20:2,'--cat-r':th.c1}}>{items.map((item,i)=><MenuCard key={item.id} item={item} onClick={setSelectedItem} delay={i*.06} imagesEnabled={imagesEnabled} catColor={th.c1}/>)}</div>
-                    {/* Subsección Guarniciones dentro de Cortes Premium */}
+                    {/* Subsecci√≥n Guarniciones dentro de Cortes Premium */}
                     {cat.id==='cortes'&&(()=>{const guarn=data.items.filter(i=>i.cat==='guarniciones');if(!guarn.length)return null;return(<div style={{marginTop:32}}>
                       <div style={{display:'flex',alignItems:'center',gap:12,marginBottom:16}}>
                         <div style={{height:1,flex:1,background:'linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent)'}}/>
@@ -1229,16 +1235,16 @@ function App() {
         </div>
       </div>
 
-      {/* ═══ ABOUT VIEW ═══ */}
+      {/* ‚ïê‚ïê‚ïê ABOUT VIEW ‚ïê‚ïê‚ïê */}
       <div className={`view-panel mesh-bg ${view==='about'?'view-active':'view-hidden'}`} style={{overflowY:'auto'}}>
         <div className="subview-bar">
-          <button className="back-btn" onClick={goHero}>← Inicio</button>
-          <button className="back-btn" onClick={goMenu}>📖 Menú</button>
-          <button className="back-btn" onClick={goRating}>⭐ Calificar</button>
+          <button className="back-btn" onClick={goHero}>‚Üê Inicio</button>
+          <button className="back-btn" onClick={goMenu}>üìñ Men√∫</button>
+          <button className="back-btn" onClick={goRating}>‚≠ê Calificar</button>
         </div>
         <div style={{maxWidth:800,margin:'0 auto',padding:'0 20px 100px'}}>
           <div className="section-animate" style={{textAlign:'center',marginBottom:40}}>
-            <p className="gold-shimmer-text" style={{fontSize:12,fontWeight:600,letterSpacing:'.3em',textTransform:'uppercase',marginBottom:12,display:'inline-block'}}>Conócenos</p>
+            <p className="gold-shimmer-text" style={{fontSize:12,fontWeight:600,letterSpacing:'.3em',textTransform:'uppercase',marginBottom:12,display:'inline-block'}}>Con√≥cenos</p>
             <h2 style={{fontFamily:'var(--serif)',fontSize:'clamp(28px,5vw,42px)',fontWeight:400,color:'var(--text)'}}>Sobre Nosotros</h2>
             <div className="premium-divider"/>
           </div>
@@ -1250,7 +1256,7 @@ function App() {
               <div style={{marginTop:24}}><SocialIcons social={data.social}/></div>
             </div>
             <div className="section-animate-right" style={{display:'flex',flexDirection:'column',gap:16}}>
-              {[{icon:'📍',title:'Ubicación',text:data.info.address},{icon:'🕐',title:'Horario',text:data.info.hours},{icon:'📞',title:'Reservaciones',text:data.info.phone},{icon:'📸',title:'Instagram',text:data.info.ig}].map((info,i)=>(
+              {[{icon:'üìç',title:'Ubicaci√≥n',text:data.info.address},{icon:'üïê',title:'Horario',text:data.info.hours},{icon:'üìû',title:'Reservaciones',text:data.info.phone},{icon:'üì∏',title:'Instagram',text:data.info.ig}].map((info,i)=>(
                 <div key={i} className="premium-glow-card" style={{display:'flex',gap:14,alignItems:'center',background:'rgba(255,255,255,.03)',border:'1px solid rgba(201,168,76,.1)',borderRadius:14,padding:'16px 20px',backdropFilter:'blur(10px)',transition:'all .4s',transitionDelay:`${i*0.1}s`}} onMouseOver={e=>{e.currentTarget.style.transform='translateX(8px)';e.currentTarget.style.borderColor='rgba(201,168,76,.25)';}} onMouseOut={e=>{e.currentTarget.style.transform='translateX(0)';e.currentTarget.style.borderColor='rgba(201,168,76,.1)';}}>
                   <span style={{fontSize:28,flexShrink:0,filter:'drop-shadow(0 2px 8px rgba(201,168,76,.3))'}}>{info.icon}</span>
                   <div><p style={{fontSize:10,textTransform:'uppercase',letterSpacing:'.2em',color:'var(--gold)',marginBottom:3,fontWeight:600}}>{info.title}</p><p style={{fontSize:14,color:'var(--text)'}}>{info.text}</p></div>
@@ -1264,21 +1270,21 @@ function App() {
               <span style={{fontFamily:'var(--serif)',fontSize:22,color:'var(--text-muted)'}}><span style={{color:'var(--gold)'}}>P</span>aranoia</span>
             </div>
             <SocialIcons social={data.social}/>
-            <p style={{fontSize:11,color:'var(--text-muted)',opacity:.5,marginTop:16}}>{data.info.ig} · © 2026 Paranoia RESTOBAR</p>
+            <p style={{fontSize:11,color:'var(--text-muted)',opacity:.5,marginTop:16}}>{data.info.ig} ¬∑ ¬© 2026 Paranoia RESTOBAR</p>
           </div>
         </div>
       </div>
 
-      {/* ═══ RATING VIEW ═══ */}
+      {/* ‚ïê‚ïê‚ïê RATING VIEW ‚ïê‚ïê‚ïê */}
       <div className={`view-panel mesh-bg ${view==='rating'?'view-active':'view-hidden'}`} style={{overflowY:'auto'}}>
         <div className="subview-bar">
-          <button className="back-btn" onClick={goHero}>← Inicio</button>
-          <button className="back-btn" onClick={goMenu}>📖 Menú</button>
-          <button className="back-btn" onClick={goAbout}>💬 Nosotros</button>
+          <button className="back-btn" onClick={goHero}>‚Üê Inicio</button>
+          <button className="back-btn" onClick={goMenu}>üìñ Men√∫</button>
+          <button className="back-btn" onClick={goAbout}>üí¨ Nosotros</button>
         </div>
         <div style={{maxWidth:800,margin:'0 auto',padding:'0 20px 100px'}}>
           <div className="section-animate" style={{textAlign:'center',marginBottom:40}}>
-            <p className="gold-shimmer-text" style={{fontSize:12,fontWeight:600,letterSpacing:'.3em',textTransform:'uppercase',marginBottom:12,display:'inline-block'}}>Tu Opinión</p>
+            <p className="gold-shimmer-text" style={{fontSize:12,fontWeight:600,letterSpacing:'.3em',textTransform:'uppercase',marginBottom:12,display:'inline-block'}}>Tu Opini√≥n</p>
             <h2 style={{fontFamily:'var(--serif)',fontSize:'clamp(28px,5vw,42px)',fontWeight:400,color:'var(--text)'}}>Califica tu Experiencia</h2>
             <div className="premium-divider"/>
           </div>
@@ -1290,10 +1296,10 @@ function App() {
 
     {/* MOBILE BOTTOM NAV */}
     <div className="bottom-nav-mobile">
-      <button className={`bottom-nav-btn ${view==='hero'?'active':''}`} onClick={goHero}><span>🏠</span><span>Inicio</span></button>
-      <button className={`bottom-nav-btn ${view==='menu'?'active':''}`} onClick={goMenu}><span>📖</span><span>Menú</span></button>
-      <button className={`bottom-nav-btn ${view==='about'?'active':''}`} onClick={goAbout}><span>💬</span><span>Nosotros</span></button>
-      <button className={`bottom-nav-btn ${view==='rating'?'active':''}`} onClick={goRating}><span>⭐</span><span>Calificar</span></button>
+      <button className={`bottom-nav-btn ${view==='hero'?'active':''}`} onClick={goHero}><span>üè†</span><span>Inicio</span></button>
+      <button className={`bottom-nav-btn ${view==='menu'?'active':''}`} onClick={goMenu}><span>üìñ</span><span>Men√∫</span></button>
+      <button className={`bottom-nav-btn ${view==='about'?'active':''}`} onClick={goAbout}><span>üí¨</span><span>Nosotros</span></button>
+      <button className={`bottom-nav-btn ${view==='rating'?'active':''}`} onClick={goRating}><span>‚≠ê</span><span>Calificar</span></button>
     </div>
 
   </>);
